@@ -457,7 +457,68 @@
   }
 
   /* ── Init ── */
+  
+  /* ── 3D Tilt Effect ── */
+  function init3DTilt() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Apply to hero background images
+    const heroBgs = document.querySelectorAll('.hero-section img.absolute, .min-h-[90vh] img.absolute');
+    heroBgs.forEach(bg => {
+      bg.style.transition = 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
+      bg.style.transform = 'scale(1.05) perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      
+      const parent = bg.parentElement;
+      parent.addEventListener('mousemove', (e) => {
+        const rect = parent.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -3; // max 3 deg
+        const rotateY = ((x - centerX) / centerX) * 3;
+        
+        bg.style.transform = `scale(1.05) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      parent.addEventListener('mouseleave', () => {
+        bg.style.transform = 'scale(1.05) perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      });
+    });
+
+    // Apply to Stats & Cards
+    const cards = document.querySelectorAll('.glass-card, .stat-card, [class*="card"]');
+    cards.forEach(card => {
+      // Avoid applying to very large containers or navigation panels
+      if (card.id === 'mobile-panel' || card.tagName === 'ASIDE') return;
+      
+      card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+      card.style.transformStyle = 'preserve-3d';
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = ((y - centerY) / centerY) * -6; // max 6 deg tilt
+        const rotateY = ((x - centerX) / centerX) * 6;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        // Optional: add a subtle glare effect via box-shadow
+        card.style.boxShadow = `0 15px 30px rgba(0,0,0,0.1), ${-rotateY}px ${rotateX}px 20px rgba(255,255,255,0.05) inset`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        card.style.boxShadow = '';
+      });
+    });
+  }
+
   function init() {
+    init3DTilt();
     injectNav();
     injectFooter();
     injectBottomBar();

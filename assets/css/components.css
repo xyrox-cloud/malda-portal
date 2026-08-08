@@ -667,15 +667,48 @@ main { padding-bottom: 60px; }
 .main-pad { padding-top: 72px; }
 
 /* ── Scroll reveal ── */
+/* ── 3D Scroll reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: perspective(1000px) translateY(40px) rotateX(10deg) rotateY(-5deg) translateZ(-50px);
+  transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform-style: preserve-3d;
 }
 .reveal.visible {
   opacity: 1;
-  transform: none;
+  transform: perspective(1000px) translateY(0) rotateX(0deg) rotateY(0deg) translateZ(0);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.6s ease;
+  }
+}
+
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+
+
+/* ── 3D Button Effects ── */
+a[class*="btn-"], button[class*="btn-"], .btn-login {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  transform: perspective(600px) translateZ(0);
+  transform-style: preserve-3d;
+}
+a[class*="btn-"]:hover, button[class*="btn-"]:hover, .btn-login:hover {
+  transform: perspective(600px) translateY(-3px) translateZ(10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 4px 6px rgba(0,0,0,0.1) !important;
+}
+a[class*="btn-"]:active, button[class*="btn-"]:active, .btn-login:active {
+  transform: perspective(600px) translateY(1px) translateZ(2px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a[class*="btn-"], button[class*="btn-"], .btn-login {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
