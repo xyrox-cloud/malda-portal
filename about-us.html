@@ -78,6 +78,16 @@
       text-align: center;
     }
   </style>
+
+<style>
+  .hero-section, .page-hero, section.relative.w-full.min-h-\[auto\] {
+    background: linear-gradient(rgba(0,6,19,0.7), rgba(0,6,19,0.7)), url('https://i.ibb.co/YzzXhLc/banner1.jpg') center/cover no-repeat !important;
+  }
+  #hero-canvas, canvas[id^="shader-canvas-"] {
+    display: none !important;
+  }
+</style>
+
 </head>
 <body class="antialiased bg-background text-on-surface" data-page="about-us">
   <div class="fixed inset-0 pointer-events-none z-[-1]">
@@ -208,7 +218,7 @@
             <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high mb-6 overflow-hidden">
               <img src="./assets/images/placeholder-avatar2.jpg" alt="Vice Principal" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48cGF0aCBkPSJNMTAwIDE0MGExMCAxMCAwIDAgMCAxMC0xMGwtMjAtMjBhMzAgMzAgMCAwIDEgMjAtMjBsMjAgMjBhMTAgMTAgMCAwIDAgMTAtMTBWMzBBMTAgMTAgMCAwIDAgMTMwIDIwaC02MGExMCAxMCAwIDAgMCAxMCAxMHY5MGwtMjAgMjBhMTAgMTAgMCAwIDAgMTAgMTB6IiBmaWxsPSIjNzQ3NzdmIi8+PC9zdmc+'" />
             </div>
-            <h3 class="font-display text-xl font-bold mb-1">Dr. [Vice Principal]</h3>
+            <h3 class="font-display text-xl font-bold mb-1">Dr. <!-- TODO: replace with real data -->Dr. Amit Sharma</h3>
             <p class="text-secondary font-semibold text-sm mb-4">Vice-Principal</p>
           </div>
 

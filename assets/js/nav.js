@@ -115,7 +115,7 @@
       { label: '📅 Class Routine (Telegram Bot)', labelBn: '📅 ক্লাস রুটিন (টেলিগ্রাম বট)', href: 'https://t.me/Maldacollage_bot', external: true },
       { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact.html' },
       { label: 'Faculty Directory', labelBn: 'শিক্ষক তালিকা', href: ROOT + 'faculty.html' },
-      { label: 'Student Login', labelBn: 'শিক্ষার্থী লগইন', href: ROOT + 'student-login.html' },
+      { label: 'Student Login', labelBn: 'শিক্ষার্থী লগইন', href: 'https://mcerp.in/erp/login.aspx' },
       { label: 'Privacy Policy', labelBn: 'গোপনীয়তা নীতি', href: ROOT + 'privacy-policy.html' },
       { label: 'FAQ', labelBn: 'সাধারণ প্রশ্নাবলী', href: ROOT + 'faq.html' },
     ]
@@ -220,7 +220,7 @@
     <div class="nav-inner">
       <!-- Logo -->
       <a href="${ROOT}index.html" class="nav-logo" aria-label="Malda College Home">
-        <span class="material-symbols-outlined" aria-hidden="true">account_balance</span>
+        <img src="https://i.ibb.co/ksHdWc7h/mc-logo-1.png" alt="Malda College" style="height:40px; width:auto; object-fit:contain; margin-right:8px;" class="mc-logo">
         <span>
           <span class="lang-en">Malda College</span>
           <span class="lang-bn">মালদা কলেজ</span>
@@ -236,7 +236,7 @@
           <span class="lang-en">বাং</span>
           <span class="lang-bn">EN</span>
         </button>
-        <a href="${ROOT}student-login.html" class="btn-login">
+        <a href="https://mcerp.in/erp/login.aspx" class="btn-login">
           <span class="lang-en">Student Login</span>
           <span class="lang-bn">শিক্ষার্থী লগইন</span>
         </a>
@@ -251,7 +251,7 @@
       <div style="padding-bottom:16px">
         ${buildMobileNav(currentPage)}
         <div style="padding:16px;margin-top:8px">
-          <a href="${ROOT}student-login.html" class="btn-primary" style="width:100%;justify-content:center">
+          <a href="https://mcerp.in/erp/login.aspx" class="btn-primary" style="width:100%;justify-content:center">
             <span class="material-symbols-outlined" style="font-size:18px">login</span>
             <span class="lang-en">Student Login</span>
             <span class="lang-bn">শিক্ষার্থী লগইন</span>

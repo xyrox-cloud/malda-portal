@@ -59,6 +59,16 @@ tailwind.config = {
     .icon-isometric { transform: rotateX(20deg) rotateY(-20deg); transition: transform 0.3s ease; }
     .glass-card:hover .icon-isometric { transform: rotateX(0) rotateY(0) scale(1.1); }
   </style>
+
+<style>
+  .hero-section, .page-hero, section.relative.w-full.min-h-\[auto\] {
+    background: linear-gradient(rgba(0,6,19,0.7), rgba(0,6,19,0.7)), url('https://i.ibb.co/YzzXhLc/banner1.jpg') center/cover no-repeat !important;
+  }
+  #hero-canvas, canvas[id^="shader-canvas-"] {
+    display: none !important;
+  }
+</style>
+
 </head>
 <body class="antialiased text-on-surface bg-background" data-page="infrastructure">
   <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">

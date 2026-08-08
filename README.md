@@ -26,7 +26,6 @@ malda-site/
 ├── notice-board.html
 ├── tenders.html
 ├── contact.html
-├── student-login.html
 ├── naac-iqac.html          # Liquid Glass
 ├── nirf.html
 ├── alumni.html             # Liquid Glass

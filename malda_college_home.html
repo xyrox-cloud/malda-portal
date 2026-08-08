@@ -194,6 +194,16 @@
             scrollbar-width: none;
         }
     </style>
+
+<style>
+  .hero-section, .page-hero, section.relative.w-full.min-h-\[auto\] {
+    background: linear-gradient(rgba(0,6,19,0.7), rgba(0,6,19,0.7)), url('https://i.ibb.co/YzzXhLc/banner1.jpg') center/cover no-repeat !important;
+  }
+  #hero-canvas, canvas[id^="shader-canvas-"] {
+    display: none !important;
+  }
+</style>
+
 </head>
 <body class="antialiased overflow-x-hidden relative">
 <!-- TopNavBar -->
@@ -213,9 +223,9 @@
 <button aria-label="Search" class="text-on-surface hover:text-secondary transition-colors">
 <span class="material-symbols-outlined">search</span>
 </button>
-<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+<a href="https://mcerp.in/erp/login.aspx" class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                     Student Login
-                </button>
+                </a>
 </div>
 </div>
 <!-- Mobile Nav Header (Nav items moved to bottom bar on mobile) -->
@@ -223,9 +233,9 @@
 <a class="font-display-lg-mobile text-headline-md font-bold text-primary" href="#">
                 Malda College
             </a>
-<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps">
+<a href="https://mcerp.in/erp/login.aspx" class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps">
                 Login
-            </button>
+            </a>
 </div>
 </nav>
 <!-- Mobile Bottom Nav Bar (Semantic Shell mapping) -->
@@ -252,7 +262,7 @@
 <!-- Main Content -->
 <main class="pt-[80px] md:pt-[100px] pb-[100px] md:pb-0">
 <!-- Hero Section -->
-<section class="relative w-full min-h-[921px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-gutter py-section-padding">
+<section class="relative w-full min-h-[auto] md:min-h-[600px] flex items-start pt-10 md:pt-32 justify-center overflow-hidden px-margin-mobile md:px-gutter py-section-padding">
 <!-- Shader Background -->
 <div class="absolute inset-0 z-0">
 <!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full opacity-60 mix-blend-multiply" -->

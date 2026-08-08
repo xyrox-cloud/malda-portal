@@ -81,50 +81,8 @@ tailwind.config = {
     <section class="px-5 md:px-gutter max-w-container-max mx-auto pb-24">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         
-        <!-- Left: Form -->
-        <div class="lg:col-span-7">
-          <div class="glass-card p-8 md:p-10 h-full flex flex-col justify-center">
-            <h2 class="font-display text-2xl text-primary font-bold mb-2">Send us a Message</h2>
-            <p class="text-on-surface-variant mb-8">Fill out the form below and our team will get back to you shortly.</p>
-            
-            <form class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="name" class="block text-sm font-semibold text-on-surface mb-2">Full Name</label>
-                  <input type="text" id="name" class="w-full bg-surface-container rounded-lg border-transparent focus:border-secondary focus:ring-2 focus:ring-secondary focus:bg-white transition-all px-4 py-3 text-on-surface" placeholder="John Doe" required>
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-semibold text-on-surface mb-2">Email Address</label>
-                  <input type="email" id="email" class="w-full bg-surface-container rounded-lg border-transparent focus:border-secondary focus:ring-2 focus:ring-secondary focus:bg-white transition-all px-4 py-3 text-on-surface" placeholder="john@example.com" required>
-                </div>
-              </div>
-              
-              <div>
-                <label for="subject" class="block text-sm font-semibold text-on-surface mb-2">Subject</label>
-                <select id="subject" class="w-full bg-surface-container rounded-lg border-transparent focus:border-secondary focus:ring-2 focus:ring-secondary focus:bg-white transition-all px-4 py-3 text-on-surface" required>
-                  <option value="" disabled selected>Select an option</option>
-                  <option value="admission">Admission Inquiry</option>
-                  <option value="academic">Academic Query</option>
-                  <option value="administrative">Administrative Support</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div>
-                <label for="message" class="block text-sm font-semibold text-on-surface mb-2">Message</label>
-                <textarea id="message" rows="5" class="w-full bg-surface-container rounded-lg border-transparent focus:border-secondary focus:ring-2 focus:ring-secondary focus:bg-white transition-all px-4 py-3 text-on-surface resize-none" placeholder="How can we help you?" required></textarea>
-              </div>
-              
-              <button type="submit" class="bg-primary text-on-primary hover:bg-primary-container hover:-translate-y-1 active:scale-95 transition-all duration-300 font-semibold py-4 px-8 rounded-full flex items-center justify-center space-x-2 w-full md:w-auto group">
-                <span>Send Message</span>
-                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
-              </button>
-            </form>
-          </div>
-        </div>
-
         <!-- Right: Info & Map -->
-        <div class="lg:col-span-5 space-y-8">
+        <div class="lg:col-span-12 max-w-4xl mx-auto space-y-8">
           
           <div class="dark-glass-card p-8 md:p-10">
             <h3 class="font-display text-2xl font-bold mb-6 text-secondary-fixed">Contact Information</h3>
@@ -159,22 +117,11 @@ tailwind.config = {
           </div>
 
           <!-- Map Embed Placeholder -->
-          <div class="glass-card overflow-hidden relative h-64 group cursor-pointer border-0 shadow-lg" onclick="window.open('https://maps.google.com/?q=Malda+College+Malda+West+Bengal', '_blank')">
-            <!-- Simulated Map Image -->
-            <div class="absolute inset-0 bg-surface-container-high bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=25.0119,88.1411&zoom=15&size=800x400&maptype=roadmap&markers=color:red%7C25.0119,88.1411')] bg-cover bg-center"></div>
-            
-            <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors duration-300"></div>
-            
-            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center transform group-hover:scale-105 transition-transform duration-500">
-              <span class="material-symbols-outlined text-white text-5xl mb-3 drop-shadow-md">map</span>
-              <span class="bg-white text-primary font-bold py-2 px-6 rounded-full shadow-lg flex items-center space-x-2 hover:bg-secondary-fixed transition-colors">
-                <span>Get Directions</span>
-                <span class="material-symbols-outlined text-sm">open_in_new</span>
-              </span>
-            </div>
+          <div class="glass-card overflow-hidden relative h-96 group border-0 shadow-lg mt-8">
+            <iframe src="https://maps.google.com/maps?q=Malda%20College,%20Rabindra%20Avenue,%20Malda,%20West%20Bengal%20732101&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
-
         </div>
+      </div></div>
       </div>
       
       <!-- Student Help Desk & Social -->
