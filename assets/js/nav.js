@@ -17,39 +17,39 @@
   /* ── Navigation data ── */
   const NAV = [
     { label: 'Home', labelBn: 'হোম', href: (ROOT || './'), page: 'home' },
-    { label: 'About Us', labelBn: 'আমাদের সম্পর্কে', href: ROOT + 'about-us.html', page: 'about-us' },
+    { label: 'About Us', labelBn: 'আমাদের সম্পর্কে', href: ROOT + 'about-us', page: 'about-us' },
     {
       label: 'Administration', labelBn: 'প্রশাসন', page: 'admin',
       children: [
-        { label: 'Governing Body', labelBn: 'পরিচালনা পর্ষদ', href: ROOT + 'governing-body.html', page: 'governing-body' },
-        { label: "Principal's Desk", labelBn: 'অধ্যক্ষের বার্তা', href: ROOT + 'principals-desk.html', page: 'principals-desk' },
-        { label: 'Administrative & Support Staff', labelBn: 'প্রশাসনিক কর্মীবৃন্দ', href: ROOT + 'administrative-staff.html', page: 'administrative-staff' },
-        { label: 'Code of Conduct of Staff', labelBn: 'কর্মীবিধি', href: ROOT + 'code-of-conduct.html', page: 'code-of-conduct' },
+        { label: 'Governing Body', labelBn: 'পরিচালনা পর্ষদ', href: ROOT + 'governing-body', page: 'governing-body' },
+        { label: "Principal's Desk", labelBn: 'অধ্যক্ষের বার্তা', href: ROOT + 'principals-desk', page: 'principals-desk' },
+        { label: 'Administrative & Support Staff', labelBn: 'প্রশাসনিক কর্মীবৃন্দ', href: ROOT + 'administrative-staff', page: 'administrative-staff' },
+        { label: 'Code of Conduct of Staff', labelBn: 'কর্মীবিধি', href: ROOT + 'code-of-conduct', page: 'code-of-conduct' },
         {
           label: 'Various Cell', labelBn: 'বিভিন্ন সেল',
           children: [
-            { label: 'Grievance and Redressal Cell', labelBn: 'অভিযোগ নিষ্পত্তি সেল', href: ROOT + 'cells/grievance-cell.html', page: 'grievance-cell' },
-            { label: 'SC/ST Cell', labelBn: 'এসসি/এসটি সেল', href: ROOT + 'cells/sc-st-cell.html', page: 'sc-st-cell' },
-            { label: 'Minority Cell', labelBn: 'সংখ্যালঘু সেল', href: ROOT + 'cells/minority-cell.html', page: 'minority-cell' },
-            { label: 'Internal Complaint Cell', labelBn: 'অভ্যন্তরীণ অভিযোগ সেল', href: ROOT + 'cells/internal-complaint-cell.html', page: 'internal-complaint-cell' },
-            { label: 'Anti Ragging Cell', labelBn: 'র‍্যাগিং বিরোধী সেল', href: ROOT + 'cells/anti-ragging-cell.html', page: 'anti-ragging-cell' },
-            { label: 'OBC Cell', labelBn: 'ওবিসি সেল', href: ROOT + 'cells/obc-cell.html', page: 'obc-cell' },
+            { label: 'Grievance and Redressal Cell', labelBn: 'অভিযোগ নিষ্পত্তি সেল', href: ROOT + 'cells/grievance-cell', page: 'grievance-cell' },
+            { label: 'SC/ST Cell', labelBn: 'এসসি/এসটি সেল', href: ROOT + 'cells/sc-st-cell', page: 'sc-st-cell' },
+            { label: 'Minority Cell', labelBn: 'সংখ্যালঘু সেল', href: ROOT + 'cells/minority-cell', page: 'minority-cell' },
+            { label: 'Internal Complaint Cell', labelBn: 'অভ্যন্তরীণ অভিযোগ সেল', href: ROOT + 'cells/internal-complaint-cell', page: 'internal-complaint-cell' },
+            { label: 'Anti Ragging Cell', labelBn: 'র‍্যাগিং বিরোধী সেল', href: ROOT + 'cells/anti-ragging-cell', page: 'anti-ragging-cell' },
+            { label: 'OBC Cell', labelBn: 'ওবিসি সেল', href: ROOT + 'cells/obc-cell', page: 'obc-cell' },
           ]
         }
       ]
     },
     {
-      label: 'Facilities', labelBn: 'অবকাঠামো', href: ROOT + 'infrastructure.html', page: 'facilities',
+      label: 'Facilities', labelBn: 'অবকাঠামো', href: ROOT + 'infrastructure', page: 'facilities',
       children: [
-        { label: 'Academic', labelBn: 'একাডেমিক', href: ROOT + 'facilities/academic.html', page: 'academic' },
-        { label: 'Administrative', labelBn: 'প্রশাসনিক', href: ROOT + 'facilities/administrative.html', page: 'administrative' },
-        { label: 'Human Resource', labelBn: 'মানবসম্পদ', href: ROOT + 'facilities/human-resource.html', page: 'human-resource' },
-        { label: 'Physical', labelBn: 'ভৌত', href: ROOT + 'facilities/physical.html', page: 'physical' },
-        { label: 'Digital', labelBn: 'ডিজিটাল', href: ROOT + 'facilities/digital.html', page: 'digital' },
+        { label: 'Academic', labelBn: 'একাডেমিক', href: ROOT + 'facilities/academic', page: 'academic' },
+        { label: 'Administrative', labelBn: 'প্রশাসনিক', href: ROOT + 'facilities/administrative', page: 'administrative' },
+        { label: 'Human Resource', labelBn: 'মানবসম্পদ', href: ROOT + 'facilities/human-resource', page: 'human-resource' },
+        { label: 'Physical', labelBn: 'ভৌত', href: ROOT + 'facilities/physical', page: 'physical' },
+        { label: 'Digital', labelBn: 'ডিজিটাল', href: ROOT + 'facilities/digital', page: 'digital' },
       ]
     },
     {
-      label: 'Programmes & Courses', labelBn: 'প্রোগ্রাম ও কোর্স', href: ROOT + 'courses.html', page: 'courses',
+      label: 'Programmes & Courses', labelBn: 'প্রোগ্রাম ও কোর্স', href: ROOT + 'courses', page: 'courses',
       children: [
         {
           label: 'Honours', labelBn: 'অনার্স',
@@ -57,32 +57,32 @@
             {
               label: 'B.A. (Hons)', labelBn: 'বিএ (অনার্স)',
               children: [
-                { label: 'Arabic', labelBn: 'আরবি', href: ROOT + 'subjects/arabic.html', page: 'arabic' },
-                { label: 'Bengali', labelBn: 'বাংলা', href: ROOT + 'subjects/bengali.html', page: 'bengali' },
-                { label: 'Economics', labelBn: 'অর্থনীতি', href: ROOT + 'subjects/economics.html', page: 'economics' },
-                { label: 'Education', labelBn: 'শিক্ষা', href: ROOT + 'subjects/education.html', page: 'education' },
-                { label: 'English', labelBn: 'ইংরেজি', href: ROOT + 'subjects/english.html', page: 'english' },
-                { label: 'History', labelBn: 'ইতিহাস', href: ROOT + 'subjects/history.html', page: 'history' },
-                { label: 'Philosophy', labelBn: 'দর্শন', href: ROOT + 'subjects/philosophy.html', page: 'philosophy' },
-                { label: 'Political Science', labelBn: 'রাষ্ট্রবিজ্ঞান', href: ROOT + 'subjects/political-science.html', page: 'political-science' },
-                { label: 'Sanskrit', labelBn: 'সংস্কৃত', href: ROOT + 'subjects/sanskrit.html', page: 'sanskrit' },
-                { label: 'Sociology', labelBn: 'সমাজবিজ্ঞান', href: ROOT + 'subjects/sociology.html', page: 'sociology' },
+                { label: 'Arabic', labelBn: 'আরবি', href: ROOT + 'subjects/arabic', page: 'arabic' },
+                { label: 'Bengali', labelBn: 'বাংলা', href: ROOT + 'subjects/bengali', page: 'bengali' },
+                { label: 'Economics', labelBn: 'অর্থনীতি', href: ROOT + 'subjects/economics', page: 'economics' },
+                { label: 'Education', labelBn: 'শিক্ষা', href: ROOT + 'subjects/education', page: 'education' },
+                { label: 'English', labelBn: 'ইংরেজি', href: ROOT + 'subjects/english', page: 'english' },
+                { label: 'History', labelBn: 'ইতিহাস', href: ROOT + 'subjects/history', page: 'history' },
+                { label: 'Philosophy', labelBn: 'দর্শন', href: ROOT + 'subjects/philosophy', page: 'philosophy' },
+                { label: 'Political Science', labelBn: 'রাষ্ট্রবিজ্ঞান', href: ROOT + 'subjects/political-science', page: 'political-science' },
+                { label: 'Sanskrit', labelBn: 'সংস্কৃত', href: ROOT + 'subjects/sanskrit', page: 'sanskrit' },
+                { label: 'Sociology', labelBn: 'সমাজবিজ্ঞান', href: ROOT + 'subjects/sociology', page: 'sociology' },
               ]
             },
             {
               label: 'B.Sc. (Hons)', labelBn: 'বিএসসি (অনার্স)',
               children: [
-                { label: 'Botany', labelBn: 'উদ্ভিদবিজ্ঞান', href: ROOT + 'subjects/botany.html', page: 'botany' },
-                { label: 'Chemistry', labelBn: 'রসায়ন', href: ROOT + 'subjects/chemistry.html', page: 'chemistry' },
-                { label: 'Computer Science', labelBn: 'কম্পিউটার বিজ্ঞান', href: ROOT + 'subjects/computer-science.html', page: 'computer-science' },
-                { label: 'Mathematics', labelBn: 'গণিত', href: ROOT + 'subjects/mathematics.html', page: 'mathematics' },
-                { label: 'Physics', labelBn: 'পদার্থবিজ্ঞান', href: ROOT + 'subjects/physics.html', page: 'physics' },
-                { label: 'Zoology', labelBn: 'প্রাণিবিজ্ঞান', href: ROOT + 'subjects/zoology.html', page: 'zoology' },
-                { label: 'Geography', labelBn: 'ভূগোল', href: ROOT + 'subjects/geography.html', page: 'geography' },
+                { label: 'Botany', labelBn: 'উদ্ভিদবিজ্ঞান', href: ROOT + 'subjects/botany', page: 'botany' },
+                { label: 'Chemistry', labelBn: 'রসায়ন', href: ROOT + 'subjects/chemistry', page: 'chemistry' },
+                { label: 'Computer Science', labelBn: 'কম্পিউটার বিজ্ঞান', href: ROOT + 'subjects/computer-science', page: 'computer-science' },
+                { label: 'Mathematics', labelBn: 'গণিত', href: ROOT + 'subjects/mathematics', page: 'mathematics' },
+                { label: 'Physics', labelBn: 'পদার্থবিজ্ঞান', href: ROOT + 'subjects/physics', page: 'physics' },
+                { label: 'Zoology', labelBn: 'প্রাণিবিজ্ঞান', href: ROOT + 'subjects/zoology', page: 'zoology' },
+                { label: 'Geography', labelBn: 'ভূগোল', href: ROOT + 'subjects/geography', page: 'geography' },
               ]
             },
-            { label: 'B.Com. (Accounting)', labelBn: 'বিকম (অ্যাকাউন্টিং)', href: ROOT + 'subjects/commerce.html', page: 'commerce' },
-            { label: 'BCA', labelBn: 'বিসিএ', href: ROOT + 'subjects/bca.html', page: 'bca' },
+            { label: 'B.Com. (Accounting)', labelBn: 'বিকম (অ্যাকাউন্টিং)', href: ROOT + 'subjects/commerce', page: 'commerce' },
+            { label: 'BCA', labelBn: 'বিসিএ', href: ROOT + 'subjects/bca', page: 'bca' },
           ]
         },
         {
@@ -94,37 +94,37 @@
         }
       ]
     },
-    { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac.html', page: 'naac-iqac' },
-    { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board.html', page: 'notice-board' },
-    { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni.html', page: 'alumni' },
-    { label: 'Admissions', labelBn: 'ভর্তি', href: ROOT + 'admissions.html', page: 'admissions' },
-    { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact.html', page: 'contact' },
+    { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac', page: 'naac-iqac' },
+    { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board', page: 'notice-board' },
+    { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni', page: 'alumni' },
+    { label: 'Admissions', labelBn: 'ভর্তি', href: ROOT + 'admissions', page: 'admissions' },
+    { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact', page: 'contact' },
   ];
 
   /* ── Footer links ── */
   const FOOTER_LINKS = {
     important: [
-      { label: 'Admissions 2026', labelBn: 'ভর্তি ২০২৬', href: ROOT + 'admissions.html' },
-      { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board.html' },
-      { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac.html' },
-      { label: 'Tenders', labelBn: 'টেন্ডার', href: ROOT + 'tenders.html' },
-      { label: 'NIRF', labelBn: 'এনআইআরএফ', href: ROOT + 'nirf.html' },
-      { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni.html' },
+      { label: 'Admissions 2026', labelBn: 'ভর্তি ২০২৬', href: ROOT + 'admissions' },
+      { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board' },
+      { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac' },
+      { label: 'Tenders', labelBn: 'টেন্ডার', href: ROOT + 'tenders' },
+      { label: 'NIRF', labelBn: 'এনআইআরএফ', href: ROOT + 'nirf' },
+      { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni' },
     ],
     connect: [
       { label: '📅 Class Routine (Telegram Bot)', labelBn: '📅 ক্লাস রুটিন (টেলিগ্রাম বট)', href: 'https://t.me/Maldacollage_bot', external: true },
-      { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact.html' },
-      { label: 'Faculty Directory', labelBn: 'শিক্ষক তালিকা', href: ROOT + 'faculty.html' },
+      { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact' },
+      { label: 'Faculty Directory', labelBn: 'শিক্ষক তালিকা', href: ROOT + 'faculty' },
       { label: 'Student Login', labelBn: 'শিক্ষার্থী লগইন', href: 'https://mcerp.in/erp/login.aspx' },
-      { label: 'Privacy Policy', labelBn: 'গোপনীয়তা নীতি', href: ROOT + 'privacy-policy.html' },
-      { label: 'FAQ', labelBn: 'সাধারণ প্রশ্নাবলী', href: ROOT + 'faq.html' },
+      { label: 'Privacy Policy', labelBn: 'গোপনীয়তা নীতি', href: ROOT + 'privacy-policy' },
+      { label: 'FAQ', labelBn: 'সাধারণ প্রশ্নাবলী', href: ROOT + 'faq' },
     ]
   };
 
   /* ── Detect current page ── */
   function getCurrentPage() {
     const path = window.location.pathname;
-    const file = path.split('/').pop().replace('.html', '') || 'index';
+    const file = path.split('/').pop().replace('', '') || 'index';
     return file;
   }
 
@@ -279,13 +279,13 @@
           <span class="lang-bn">উত্তরবঙ্গে ১৯৪৪ সাল থেকে মানসম্পন্ন শিক্ষা ও মেধা বিকাশে নিবেদিত ঐতিহ্যবাহী প্রতিষ্ঠান। NAAC স্বীকৃত: গ্রেড B+ (২য় চক্র)।</span>
         </p>
         <div style="display:flex;gap:10px;margin-top:8px">
-          <a href="${ROOT}contact.html" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="Contact">
+          <a href="${ROOT}contact" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="Contact">
             <span class="material-symbols-outlined" style="font-size:18px">mail</span>
           </a>
-          <a href="${ROOT}about-us.html" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="About">
+          <a href="${ROOT}about-us" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="About">
             <span class="material-symbols-outlined" style="font-size:18px">public</span>
           </a>
-          <a href="${ROOT}notice-board.html" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="Notices">
+          <a href="${ROOT}notice-board" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.20);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.60);text-decoration:none;transition:all 0.2s" aria-label="Notices">
             <span class="material-symbols-outlined" style="font-size:18px">notifications</span>
           </a>
         </div>
@@ -328,9 +328,9 @@
     const cur = getCurrentPage();
     const items = [
       { href: (ROOT || './'), icon: 'home', label: 'Home', labelBn: 'হোম', page: 'index' },
-      { href: ROOT + 'about-us.html', icon: 'info', label: 'About', labelBn: 'সম্পর্কে', page: 'about-us' },
-      { href: ROOT + 'courses.html', icon: 'school', label: 'Courses', labelBn: 'কোর্স', page: 'courses' },
-      { href: ROOT + 'admissions.html', icon: 'history_edu', label: 'Admissions', labelBn: 'ভর্তি', page: 'admissions' },
+      { href: ROOT + 'about-us', icon: 'info', label: 'About', labelBn: 'সম্পর্কে', page: 'about-us' },
+      { href: ROOT + 'courses', icon: 'school', label: 'Courses', labelBn: 'কোর্স', page: 'courses' },
+      { href: ROOT + 'admissions', icon: 'history_edu', label: 'Admissions', labelBn: 'ভর্তি', page: 'admissions' },
     ];
     return items.map(item => {
       const active = (cur === item.page || (item.page === 'index' && cur === '')) ? ' active' : '';
