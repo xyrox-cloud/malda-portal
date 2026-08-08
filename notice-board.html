@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notice Board | Malda College</title>
+  <meta name="description" content="Latest announcements, academic notices, examination schedules, and general updates from Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .glass-panel {
+      background: rgba(255,255,255,0.70);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.50);
+      box-shadow: 0 20px 40px rgba(0,31,63,0.08);
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.70);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.50);
+      box-shadow: 0 10px 30px rgba(0,31,63,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,31,63,0.12);
+    }
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1577563908411-50cb98976aea?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(0,6,19,0.9) 0%, rgba(0,31,63,0.8) 100%);
+    }
+    .timeline-line {
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e3e2e5;
+    }
+    @media (min-width: 768px) {
+      .timeline-line {
+        left: 8.5rem;
+      }
+    }
+    .filter-btn {
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: #000613;
+      color: #ffffff;
+      border-color: #000613;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="notice-board">
+
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+  </div>
+
+  <main class="pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 lg:pt-32 lg:pb-32 hero-bg text-on-primary">
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6 relative z-10">
+        <div class="flex items-center gap-2 text-sm font-medium text-inverse-primary mb-6">
+          <a href="index.html" class="hover:text-on-primary transition-colors">Home</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <span>Notice Board</span>
+        </div>
+        <div class="max-w-3xl">
+          <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Announcements</p>
+          <h1 class="font-display text-4xl lg:text-6xl font-bold leading-tight mb-6">Notice Board</h1>
+          <p class="text-lg lg:text-xl text-primary-fixed-dim font-body max-w-2xl">
+            Stay updated with the latest academic announcements, examination schedules, and official circulars.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Telegram Class Routine Banner ── -->
+    <div class="bg-primary border-b border-white/10">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <!-- Telegram SVG icon -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="12" fill="#ffe088"/>
+            <path d="M17.472 6.324l-2.168 10.232c-.162.72-.588.894-1.192.556l-3.3-2.43-1.593 1.534c-.176.175-.324.322-.664.322l.238-3.36 6.12-5.532c.266-.235-.058-.366-.413-.131L6.57 12.57 3.3 11.54c-.717-.224-.73-.717.15-.96l13.848-5.34c.597-.217 1.12.13.174.084z" fill="#241a00"/>
+          </svg>
+          <div>
+            <span class="text-white font-semibold text-[13px] leading-tight block lang-en">Class Routine available on Telegram</span>
+            <span class="text-white font-semibold text-[13px] leading-tight block lang-bn">টেলিগ্রামে ক্লাস রুটিন পাওয়া যাচ্ছে</span>
+            <span class="text-white/55 text-[11px] tracking-wide lang-en">Get your up-to-date class schedule via our Telegram bot</span>
+            <span class="text-white/55 text-[11px] tracking-wide lang-bn">আমাদের টেলিগ্রাম বটে আপ-টু-ডেট ক্লাস সময়সূচি পান</span>
+          </div>
+        </div>
+        <a href="https://t.me/Maldacollage_bot" target="_blank" rel="noopener noreferrer"
+           class="flex-shrink-0 flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed font-bold text-[11px] tracking-[0.10em] uppercase px-5 py-2.5 rounded-full hover:bg-secondary-fixed-dim hover:-translate-y-0.5 active:scale-95 transition-all"
+           id="telegram-routine-banner-btn" aria-label="Open Class Routine Telegram Bot">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.472 6.324l-2.168 10.232c-.162.72-.588.894-1.192.556l-3.3-2.43-1.593 1.534c-.176.175-.324.322-.664.322l.238-3.36 6.12-5.532c.266-.235-.058-.366-.413-.131L6.57 12.57 3.3 11.54c-.717-.224-.73-.717.15-.96l13.848-5.34c.597-.217 1.12.13.174.084z" fill="currentColor"/>
+          </svg>
+          <span class="lang-en">Class Routine (Telegram Bot)</span>
+          <span class="lang-bn">ক্লাস রুটিন (টেলিগ্রাম বট)</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="sticky top-[72px] z-40 bg-surface/90 backdrop-blur-md border-b border-surface-variant py-4">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6 flex overflow-x-auto no-scrollbar gap-2 pb-2 md:pb-0">
+        <button class="filter-btn active whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-category="all">All Notices</button>
+        <button class="filter-btn whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-category="academic">Academic</button>
+        <button class="filter-btn whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-category="admissions">Admissions</button>
+        <button class="filter-btn whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-category="examination">Examination</button>
+        <a href="tenders.html" class="whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant text-secondary">Tenders</a>
+        <button class="filter-btn whitespace-nowrap px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-category="general">General</button>
+      </div>
+    </div>
+
+    <!-- Timeline View -->
+    <section class="py-16">
+      <div class="max-w-[900px] mx-auto px-5 lg:px-6 relative">
+        <div class="timeline-line"></div>
+        
+        <div class="space-y-8" id="notice-list">
+          
+          <!-- Notice 1 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="examination">
+            <!-- Date Column -->
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Aug 15</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <!-- Content Card -->
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Examination</span>
+                  <span class="px-2 py-1 bg-error/10 text-error text-xs font-bold uppercase rounded">Urgent</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">UG Semester IV Final Examination Schedule</h3>
+                <p class="text-on-surface-variant text-sm mb-4">Detailed routine for BA/BSc/BCom Honours and General Semester IV examinations starting from September 10, 2026.</p>
+                <div class="flex items-center gap-4">
+                  <a href="#" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">download</span> PDF (245 KB)
+                  </a>
+                  <a href="#" class="text-sm font-medium text-outline hover:text-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 2 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="admissions">
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Aug 12</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Admissions</span>
+                  <span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold uppercase rounded">Important</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">Publication of 1st Merit List for UG Admissions</h3>
+                <p class="text-on-surface-variant text-sm mb-4">The first merit list for BA/BSc/BCom Honours will be published on August 14, 2026, at 4:00 PM.</p>
+                <div class="flex items-center gap-4">
+                  <a href="admissions.html" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">open_in_new</span> Go to Portal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 3 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="academic">
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Aug 05</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Academic</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">Commencement of Semester III Classes</h3>
+                <p class="text-on-surface-variant text-sm mb-4">Regular classes for all UG Semester III students will commence from August 10, 2026. Students are advised to check the departmental notice boards for routines.</p>
+                <div class="flex items-center gap-4">
+                  <a href="#" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">download</span> Routine PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 4 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="tenders">
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Aug 01</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Tenders</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">NIT for Supply of Laboratory Equipment (Physics Dept)</h3>
+                <p class="text-on-surface-variant text-sm mb-4">Sealed quotations are invited from reputed suppliers for providing laboratory equipment for the Physics Department.</p>
+                <div class="flex items-center gap-4">
+                  <a href="tenders.html" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1">
+                    View Tender Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 5 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="general">
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Jul 28</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">General</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">Observance of Independence Day 2026</h3>
+                <p class="text-on-surface-variant text-sm mb-4">Flag hoisting ceremony will be held on August 15 at 8:30 AM in the college campus. All staff and students are requested to attend.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notice 6 -->
+          <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 notice-item" data-category="examination">
+            <div class="md:w-32 flex-shrink-0 flex items-center md:items-start md:justify-end relative z-10 pl-10 md:pl-0">
+              <div class="absolute left-[-0.3rem] md:left-auto md:right-[-2.2rem] w-4 h-4 rounded-full bg-outline-variant ring-4 ring-surface"></div>
+              <div class="text-left md:text-right">
+                <div class="font-display font-bold text-xl">Jul 20</div>
+                <div class="text-sm text-on-surface-variant">2026</div>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="glass-card p-6 rounded-2xl relative">
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Examination</span>
+                </div>
+                <h3 class="font-display text-xl font-bold mb-2">Form Fill-up for Semester IV Exams</h3>
+                <p class="text-on-surface-variant text-sm mb-4">Online form fill-up portal for Semester IV will remain open from July 22 to July 30, 2026.</p>
+                <div class="flex items-center gap-4">
+                  <a href="#" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">download</span> Notice PDF
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center">
+          <button class="px-6 py-3 bg-surface-variant text-on-surface-variant rounded-full font-medium hover:bg-surface-container-high transition-colors">
+            Load More Notices
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.notice-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const category = btn.getAttribute('data-category');
+          
+          items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

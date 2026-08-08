@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Faculty Directory - Malda College</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#faf9fc",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "secondary-container": "#fed65b",
+                        "on-secondary-fixed": "#241a00",
+                        "primary-fixed-dim": "#afc8f0",
+                        "primary": "#000613",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-dim": "#dbd9dd",
+                        "surface-variant": "#e3e2e5",
+                        "primary-container": "#001f3f",
+                        "surface-container-low": "#f4f3f6",
+                        "inverse-surface": "#2f3033",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "outline": "#74777f",
+                        "surface-container-high": "#e9e7eb",
+                        "secondary-fixed": "#ffe088",
+                        "surface": "#faf9fc",
+                        "tertiary": "#040607",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f2f0f3",
+                        "on-tertiary-container": "#848688",
+                        "surface-container-highest": "#e3e2e5",
+                        "surface-tint": "#476083",
+                        "secondary": "#735c00",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#745c00",
+                        "on-surface": "#1a1c1e",
+                        "inverse-primary": "#afc8f0",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary-container": "#6f88ad",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#43474e",
+                        "background": "#faf9fc",
+                        "tertiary-container": "#1c1f20",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "on-background": "#1a1c1e",
+                        "on-primary-fixed": "#001c3a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#efedf0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "120px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-top-color: rgba(255, 255, 255, 0.9);
+            border-left-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(0, 31, 63, 0.05), inset 0 2px 4px 0 rgba(255, 255, 255, 0.3);
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(0, 31, 63, 0.08), inset 0 2px 4px 0 rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px 0 rgba(0, 31, 63, 0.12), inset 0 2px 4px 0 rgba(255, 255, 255, 0.6);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+        .glass-input {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02), 0 2px 8px 0 rgba(0, 31, 63, 0.02);
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(255, 255, 255, 0.9);
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02), 0 0 0 2px rgba(254, 214, 91, 0.4);
+            outline: none;
+        }
+        .glass-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-top-color: rgba(255, 255, 255, 0.9);
+            border-left-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 12px 0 rgba(0, 31, 63, 0.05), inset 0 2px 4px 0 rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glass-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px 0 rgba(0, 31, 63, 0.08), inset 0 2px 4px 0 rgba(255, 255, 255, 0.6);
+        }
+        .glass-btn-active {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 12px 0 rgba(0, 31, 63, 0.08), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8);
+        }
+        
+        .bg-blob-navy {
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 31, 63, 0.08) 0%, rgba(250, 249, 252, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        .bg-blob-gold {
+            position: fixed;
+            bottom: -10%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(254, 214, 91, 0.08) 0%, rgba(250, 249, 252, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Elements -->
+<div class="bg-blob-navy"></div>
+<div class="bg-blob-gold"></div>
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-[0_20px_40px_rgba(0,31,63,0.08)] fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-headline-md font-bold text-primary dark:text-primary-fixed">Malda College</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-all duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-all duration-300" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-all duration-300" href="#">Courses</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-secondary transition-all duration-300" href="#">Admissions</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md text-on-surface placeholder:text-outline w-40" placeholder="Search..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-full hover:-translate-y-0.5 active:scale-95 transition-all duration-300 shadow-md">
+                    Student Login
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[120px] pb-section-padding z-0 relative px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-16 text-center md:text-left">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Faculty Directory</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover our distinguished faculty members dedicated to academic excellence and student success at Malda College.</p>
+</section>
+<!-- Search and Filter Bar -->
+<section class="glass-panel rounded-xl p-6 mb-12 flex flex-col md:flex-row gap-6 items-center justify-between z-10 relative">
+<div class="w-full md:w-1/2 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="glass-input w-full rounded-full py-3 pl-12 pr-4 text-body-md font-body-md text-on-surface placeholder:text-outline/70" placeholder="Search by name or department..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 w-full md:w-auto justify-center md:justify-end">
+<button class="glass-btn glass-btn-active text-primary font-label-caps text-label-caps px-4 py-2 rounded-full">All</button>
+<button class="glass-btn text-primary font-label-caps text-label-caps px-4 py-2 rounded-full">Arts</button>
+<button class="glass-btn text-primary font-label-caps text-label-caps px-4 py-2 rounded-full">Science</button>
+<button class="glass-btn text-primary font-label-caps text-label-caps px-4 py-2 rounded-full">Commerce</button>
+<button class="glass-btn text-primary font-label-caps text-label-caps px-4 py-2 rounded-full">BCA</button>
+</div>
+</section>
+<!-- Faculty Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 z-10 relative">
+<!-- Card 1 -->
+<article class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" data-alt="A professional headshot of a mature academic professor with a kind smile, wearing a tailored blazer in a modern, brightly lit office setting with subtle architectural details in the background. High key lighting, 85mm portrait lens, academic yet approachable mood, deep navy and soft gold color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUzLvcs_9zt5bi8K_y89sRGBWSzNSYnEFBRXel-EiPiaKlr5sMrsTxOSU9fMsxMhyCpTUJ5DGWnM_2oZ0X9Xe6pg8M_O4QdcO-hEDMp7jK4ArSrHy5h7dwdL5UKoUMglY3em0fZl6gdeqXJCJHOj7w7oFjMqzpkEG5q0vdwi4hLYHPl0kv563bgCFQ9qMzoT4HBgEs2tTauYNeYzMUNIsEcje9fg7QCRERi-etjDqQwoB1BS1S9B_T"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps px-3 py-1 rounded-full mb-2 shadow-sm border border-white/40">Science</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Dr. Amitava Roy</h3>
+<p class="font-body-md text-body-md text-secondary font-semibold">HOD, Department of Physics</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Specializing in Quantum Mechanics and Condensed Matter Physics. Dr. Roy brings over 20 years of research and teaching experience to Malda College.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex gap-2">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="description">description</span></a>
+</div>
+<button class="text-secondary font-label-caps text-label-caps hover:text-secondary-container transition-colors flex items-center gap-1 group">
+                            View Profile
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" data-alt="A professional, well-lit portrait of an engaging female professor in her 40s. She is standing in a grand, sunlit university library featuring tall windows and wooden bookshelves. The aesthetic balances historic prestige with modern clarity, employing a rich navy and warm gold color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxghMXz0Ft2a-7YAabsIsogZBbiOe9P1IhdRAfiGoLN7ht69sr_w8-tjDU0Tdz58cvLkT3Ec_T3e9o8DoUeyVUfZN51uCXnRK6cHEIZKKdDx0whLWDFHnK-C0zmS94xzPbW7T6jrjZHaKr1W5o-cXi_jmk8aTm6SRnbxxmAc6zPFDQfhgAm-f7ofQrxW-k-diL-NEmPAwYqcD0VxX60fu7mQ4y4_NUTiJVFAjelhHKSC_qol4Cln9L"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps px-3 py-1 rounded-full mb-2 shadow-sm border border-white/40">Arts</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Dr. Sangeeta Das</h3>
+<p class="font-body-md text-body-md text-secondary font-semibold">Assistant Professor, English</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Expert in Post-Colonial Literature and Feminist Literary Theory. Passionate about fostering critical thinking and creative expression in students.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex gap-2">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+</div>
+<button class="text-secondary font-label-caps text-label-caps hover:text-secondary-container transition-colors flex items-center gap-1 group">
+                            View Profile
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" data-alt="A distinguished academic portrait of a male professor in his 50s. The setting is a bright, minimalist modern lecture hall with soft, diffused daylight. The image has a crisp, professional look with subtle depth of field, emphasizing a sophisticated navy and gold tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBbvTmNqWpjGRgG1CMIUEkGBOi-BwGvu8YaRp5puvCKef8SOqanJ32716qpV8-Vckc6pOCfpNRLbvDP330uLaUuzR3rlzU2W5sEzTbQkG82Oa2CXcd2KxAsjH4wh7oDPU6x5wRMCTKt6XP_lc4tj35Bj6FTPiRPxgjr164prUhDd4m80mYMO2i3FpK0YaRLoYT8rvEV2f03Ehw8XlaGmqn1vl7IPGD5MI1aij2UFDjpEAB7cv92poC"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps text-label-caps px-3 py-1 rounded-full mb-2 shadow-sm border border-white/40">Commerce</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Prof. B.K. Sharma</h3>
+<p class="font-body-md text-body-md text-secondary font-semibold">HOD, Department of Commerce</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Focuses on Corporate Finance and Financial Markets. Dedicated to bridging the gap between theoretical knowledge and practical industry applications.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex gap-2">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="description">description</span></a>
+</div>
+<button class="text-secondary font-label-caps text-label-caps hover:text-secondary-container transition-colors flex items-center gap-1 group">
+                            View Profile
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" data-alt="A modern professional portrait of a young male academic in a smart-casual outfit. He is pictured in a sleek, contemporary computer lab environment with soft ambient lighting highlighting his features. The color grading is cool and crisp, adhering to a high-end navy and gold academic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcBGztTGBkALiB-5YdlywaDT9dnCk80DxsPk3hUUzRsw7GWG4Te64yG04PCKUpwJYm1vJy8vdm2IbkHYaBVEaBzKmmLQf4EsFJItlGi5tc_6WDzS9BPaoVPIVbJnPEMa4VGR9znDMRXd98pUYtV9FPDTWQW5kh1TFpuGU7lRkh1USG646s6XBUy_w4log-C44X9NWpk4BsUDqeuOzYe7TY-39PURGbk1eDKAV7ma_sCkHNZbyqRyhE"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-4">
+<span class="inline-block bg-primary-container text-on-primary-container font-label-caps text-label-caps px-3 py-1 rounded-full mb-2 shadow-sm border border-white/40">BCA</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Mr. R. Chatterjee</h3>
+<p class="font-body-md text-body-md text-secondary font-semibold">Assistant Professor, BCA</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">Specialist in Machine Learning and Data Structures. Leads the college's advanced coding bootcamp and multiple tech-driven student initiatives.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+<div class="flex gap-2">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="language">language</span></a>
+</div>
+<button class="text-secondary font-label-caps text-label-caps hover:text-secondary-container transition-colors flex items-center gap-1 group">
+                            View Profile
+                            <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination (Optional/Stylistic) -->
+<div class="mt-12 flex justify-center z-10 relative">
+<div class="glass-panel flex gap-2 rounded-full p-2">
+<button class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-primary"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="glass-btn glass-btn-active w-10 h-10 rounded-full flex items-center justify-center text-primary font-label-caps text-label-caps">1</button>
+<button class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:text-primary font-label-caps text-label-caps">2</button>
+<button class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:text-primary font-label-caps text-label-caps">3</button>
+<button class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-outline hover:text-primary"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary dark:bg-tertiary-container w-full rounded-t-xl z-20 relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-display-lg text-headline-md text-secondary-fixed">Malda College</span>
+<p class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70">Empowering minds since 1944. A center of excellence for higher education.</p>
+</div>
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col gap-3">
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">Admissions</a>
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">Tenders</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">IQAC</a>
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">NIRF</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">Contact Us</a>
+<a class="font-label-caps text-label-caps text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors transition-all duration-200" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-white/10 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-primary/50 text-sm">© 1944-2024 Malda College. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

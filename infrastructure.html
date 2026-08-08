@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Facilities & Infrastructure | Malda College</title>
+  <meta name="description" content="Explore the diverse facilities and modern infrastructure available at Malda College campus."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.1; z-index: -1; pointer-events: none; }
+    .glass-card { background: rgba(255,255,255,0.70); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.50); box-shadow: 0 20px 40px rgba(0,31,63,0.08); transition: transform 0.3s, box-shadow 0.3s; border-radius: 1rem; }
+    .glass-card:hover { transform: translateY(-4px); box-shadow: 0 25px 50px rgba(0,31,63,0.12); }
+    .icon-isometric { transform: rotateX(20deg) rotateY(-20deg); transition: transform 0.3s ease; }
+    .glass-card:hover .icon-isometric { transform: rotateX(0) rotateY(0) scale(1.1); }
+  </style>
+</head>
+<body class="antialiased text-on-surface bg-background" data-page="infrastructure">
+  <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00"></div>
+  </div>
+
+  <main class="main-pad pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 px-5 md:px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-secondary font-semibold tracking-widest uppercase text-sm mb-4">Campus Life</p>
+      <h1 class="font-display text-4xl md:text-6xl text-primary font-bold mb-6">Facilities & Infrastructure</h1>
+      <nav class="text-sm font-medium text-on-surface-variant flex justify-center items-center space-x-2 mb-8">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <span class="text-primary">Facilities</span>
+      </nav>
+      <p class="text-lg md:text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+        Malda College offers a vibrant campus equipped with modern facilities designed to support academic excellence, personal growth, and well-being of our students and staff.
+      </p>
+    </section>
+
+    <!-- Stats -->
+    <section class="px-5 md:px-gutter max-w-container-max mx-auto pb-16">
+      <div class="glass-card p-8 flex flex-wrap justify-center gap-8 md:gap-16">
+        <div class="text-center">
+          <p class="font-display text-4xl font-bold text-secondary">50+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mt-2">Classrooms</p>
+        </div>
+        <div class="text-center">
+          <p class="font-display text-4xl font-bold text-secondary">10+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mt-2">Laboratories</p>
+        </div>
+        <div class="text-center">
+          <p class="font-display text-4xl font-bold text-secondary">1</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mt-2">Central Library</p>
+        </div>
+        <div class="text-center">
+          <p class="font-display text-4xl font-bold text-secondary">5k</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mt-2">Sq.M Campus</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facility Cards -->
+    <section class="px-5 md:px-gutter max-w-container-max mx-auto pb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Academic -->
+      <div class="glass-card p-8 flex flex-col items-start group">
+        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary icon-isometric">menu_book</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-primary mb-3">Academic</h3>
+        <p class="text-on-surface-variant mb-6 flex-grow">Smart classrooms, well-equipped science and computer laboratories, and a comprehensive central library.</p>
+        <a href="facilities/academic.html" class="inline-flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+          <span>Learn More</span>
+          <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Administrative -->
+      <div class="glass-card p-8 flex flex-col items-start group">
+        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary icon-isometric">business_center</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-primary mb-3">Administrative</h3>
+        <p class="text-on-surface-variant mb-6 flex-grow">Centralized administrative block, principal's office, modernized staff rooms, and spacious conference halls.</p>
+        <a href="facilities/administrative.html" class="inline-flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+          <span>Learn More</span>
+          <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Human Resource -->
+      <div class="glass-card p-8 flex flex-col items-start group">
+        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary icon-isometric">groups</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-primary mb-3">Human Resource</h3>
+        <p class="text-on-surface-variant mb-6 flex-grow">Dedicated faculty lounges, training centers, and spaces designed for collaborative work and meetings.</p>
+        <a href="facilities/human-resource.html" class="inline-flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+          <span>Learn More</span>
+          <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Physical -->
+      <div class="glass-card p-8 flex flex-col items-start group lg:col-span-1 lg:ml-auto md:col-span-2 lg:col-start-1">
+        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary icon-isometric">sports_basketball</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-primary mb-3">Physical</h3>
+        <p class="text-on-surface-variant mb-6 flex-grow">Extensive sports grounds, indoor gymnasium, hygienic canteen, and secure separate hostels for boys and girls.</p>
+        <a href="facilities/physical.html" class="inline-flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+          <span>Learn More</span>
+          <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Digital -->
+      <div class="glass-card p-8 flex flex-col items-start group lg:col-span-2">
+        <div class="w-16 h-16 rounded-xl bg-primary/5 flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-4xl text-primary icon-isometric">computer</span>
+        </div>
+        <h3 class="font-display text-2xl font-bold text-primary mb-3">Digital</h3>
+        <p class="text-on-surface-variant mb-6 flex-grow">Campus-wide high-speed WiFi, modern computer labs, digital resource center, and smart campus management systems.</p>
+        <a href="facilities/digital.html" class="inline-flex items-center text-secondary font-semibold group-hover:text-primary transition-colors">
+          <span>Learn More</span>
+          <span class="material-symbols-outlined text-sm ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+
+    </section>
+  </main>
+  
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

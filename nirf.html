@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIRF Data | Malda College</title>
+  <meta name="description" content="Explore Malda College's National Institutional Ranking Framework (NIRF) rankings, data, and performance reports."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.1; z-index: -1; pointer-events: none; }
+    .glass-card { background: rgba(255,255,255,0.70); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.50); box-shadow: 0 20px 40px rgba(0,31,63,0.08); transition: transform 0.3s, box-shadow 0.3s; border-radius: 1rem; }
+    .glass-card:hover { transform: translateY(-4px); box-shadow: 0 25px 50px rgba(0,31,63,0.12); }
+  </style>
+</head>
+<body class="antialiased text-on-surface bg-background" data-page="nirf">
+  <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00"></div>
+  </div>
+
+  <main class="main-pad pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 px-5 md:px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-secondary font-semibold tracking-widest uppercase text-sm mb-4">Rankings & Transparency</p>
+      <h1 class="font-display text-4xl md:text-6xl text-primary font-bold mb-6">NIRF Data</h1>
+      <nav class="text-sm font-medium text-on-surface-variant flex justify-center items-center space-x-2">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <span class="text-primary">NIRF</span>
+      </nav>
+    </section>
+
+    <section class="px-5 md:px-gutter max-w-container-max mx-auto pb-24 space-y-16">
+      
+      <!-- Intro -->
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+          The National Institutional Ranking Framework (NIRF) was approved by the MHRD and outlines a methodology to rank institutions across the country. Malda College consistently participates in NIRF, showcasing our dedication to educational excellence, research, and holistic development.
+        </p>
+      </div>
+
+      <!-- Parameters Grid -->
+      <div>
+        <h2 class="font-display text-3xl font-bold text-primary mb-8 text-center">Ranking Parameters</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glass-card p-6 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4">menu_book</span>
+            <h3 class="font-semibold text-lg text-primary mb-2">Teaching, Learning & Resources</h3>
+            <p class="text-sm text-on-surface-variant">Evaluating student strength, faculty-student ratio, and financial resources.</p>
+          </div>
+          <div class="glass-card p-6 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4">science</span>
+            <h3 class="font-semibold text-lg text-primary mb-2">Research & Professional Practice</h3>
+            <p class="text-sm text-on-surface-variant">Assessing publications, citations, and executive development programs.</p>
+          </div>
+          <div class="glass-card p-6 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4">school</span>
+            <h3 class="font-semibold text-lg text-primary mb-2">Graduation Outcomes</h3>
+            <p class="text-sm text-on-surface-variant">Tracking placement rates, higher education progression, and university exams.</p>
+          </div>
+          <div class="glass-card p-6 flex flex-col items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4">groups</span>
+            <h3 class="font-semibold text-lg text-primary mb-2">Outreach & Inclusivity</h3>
+            <p class="text-sm text-on-surface-variant">Measuring regional diversity, women's representation, and economically challenged students.</p>
+          </div>
+          <div class="glass-card p-6 flex flex-col items-center text-center lg:col-span-2 lg:mx-auto lg:max-w-md">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4">visibility</span>
+            <h3 class="font-semibold text-lg text-primary mb-2">Perception</h3>
+            <p class="text-sm text-on-surface-variant">Understanding the institution's public and peer perception regarding excellence.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="glass-card overflow-hidden">
+        <div class="p-6 md:p-8 bg-surface/50 border-b border-outline-variant/30 flex justify-between items-center flex-wrap gap-4">
+          <h2 class="font-display text-2xl font-bold text-primary">NIRF Ranking History</h2>
+          <a href="https://www.nirfindia.org" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary hover:bg-primary-container px-6 py-2.5 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2 text-sm hover:-translate-y-1 active:scale-95 shadow-md">
+            <span>Visit NIRF Portal</span>
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-surface-container-low text-on-surface font-semibold text-sm tracking-wide border-b border-outline-variant/50">
+                <th class="py-4 px-6 md:px-8">Year</th>
+                <th class="py-4 px-6 md:px-8">Category</th>
+                <th class="py-4 px-6 md:px-8">Rank / Band</th>
+                <th class="py-4 px-6 md:px-8 text-right">Detailed Report</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/30">
+              <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                <td class="py-4 px-6 md:px-8 font-medium">2024</td>
+                <td class="py-4 px-6 md:px-8 text-on-surface-variant">College</td>
+                <td class="py-4 px-6 md:px-8">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/50 text-secondary font-semibold text-sm">Band 151-200</span>
+                </td>
+                <td class="py-4 px-6 md:px-8 text-right">
+                  <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium transition-colors">
+                    <span class="mr-1">Download PDF</span>
+                    <span class="material-symbols-outlined text-lg">download</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                <td class="py-4 px-6 md:px-8 font-medium">2023</td>
+                <td class="py-4 px-6 md:px-8 text-on-surface-variant">College</td>
+                <td class="py-4 px-6 md:px-8">Participated</td>
+                <td class="py-4 px-6 md:px-8 text-right">
+                  <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium transition-colors">
+                    <span class="mr-1">Download PDF</span>
+                    <span class="material-symbols-outlined text-lg">download</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                <td class="py-4 px-6 md:px-8 font-medium">2022</td>
+                <td class="py-4 px-6 md:px-8 text-on-surface-variant">College</td>
+                <td class="py-4 px-6 md:px-8">Participated</td>
+                <td class="py-4 px-6 md:px-8 text-right">
+                  <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium transition-colors">
+                    <span class="mr-1">Download PDF</span>
+                    <span class="material-symbols-outlined text-lg">download</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                <td class="py-4 px-6 md:px-8 font-medium">2021</td>
+                <td class="py-4 px-6 md:px-8 text-on-surface-variant">College</td>
+                <td class="py-4 px-6 md:px-8">Participated</td>
+                <td class="py-4 px-6 md:px-8 text-right">
+                  <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium transition-colors">
+                    <span class="mr-1">Download PDF</span>
+                    <span class="material-symbols-outlined text-lg">download</span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="hover:bg-surface-container-lowest/50 transition-colors">
+                <td class="py-4 px-6 md:px-8 font-medium">2020</td>
+                <td class="py-4 px-6 md:px-8 text-on-surface-variant">College</td>
+                <td class="py-4 px-6 md:px-8">Participated</td>
+                <td class="py-4 px-6 md:px-8 text-right">
+                  <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-medium transition-colors">
+                    <span class="mr-1">Download PDF</span>
+                    <span class="material-symbols-outlined text-lg">download</span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

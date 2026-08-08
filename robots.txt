@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maldacollege.ac.in/sitemap.xml
+
+# Disallow admin/private directories
+Disallow: /assets/
+Disallow: /serve.sh

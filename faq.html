@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frequently Asked Questions | Malda College</title>
+  <meta name="description" content="Find answers to common questions about admissions, academics, examinations, and student services at Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.1; z-index: -1; pointer-events: none; }
+    .glass-card { background: rgba(255,255,255,0.70); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.50); box-shadow: 0 10px 30px rgba(0,31,63,0.05); border-radius: 1rem; }
+    
+    /* Native Accordion Styles */
+    details { transition: all 0.3s ease; }
+    details > summary { list-style: none; cursor: pointer; user-select: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    
+    details[open] .toggle-icon { transform: rotate(45deg); }
+    details[open] .answer-panel { animation: slideDown 0.3s ease-out forwards; }
+    
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="antialiased text-on-surface bg-background" data-page="faq">
+  <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00"></div>
+  </div>
+
+  <main class="main-pad pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 px-5 md:px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-secondary font-semibold tracking-widest uppercase text-sm mb-4">Help Center</p>
+      <h1 class="font-display text-4xl md:text-6xl text-primary font-bold mb-6">Frequently Asked Questions</h1>
+      <nav class="text-sm font-medium text-on-surface-variant flex justify-center items-center space-x-2">
+        <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+        <span class="material-symbols-outlined text-sm">chevron_right</span>
+        <span class="text-primary">FAQ</span>
+      </nav>
+      
+      <!-- Search Bar -->
+      <div class="max-w-2xl mx-auto mt-12 relative">
+        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-xl">search</span>
+        <input type="text" placeholder="Search for questions..." class="w-full glass-card pl-12 pr-6 py-4 text-lg border-transparent focus:border-secondary focus:ring-2 focus:ring-secondary transition-all outline-none">
+      </div>
+    </section>
+
+    <section class="px-5 md:px-gutter max-w-3xl mx-auto pb-24 space-y-12">
+      
+      <!-- Admissions -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl font-bold text-primary mb-6 border-b border-outline-variant/50 pb-2">Admissions</h2>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What are the eligibility criteria for undergraduate courses?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Eligibility depends on the specific course. Generally, students must have passed the 10+2 examination from a recognized board with minimum required percentage marks in relevant subjects. Detailed criteria are published in the admission brochure each year.
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>How can I apply for admission?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            The admission process is entirely online. Interested candidates should visit the admission portal via the college website during the notified admission period, fill out the form, upload necessary documents, and pay the application fee.
+          </div>
+        </details>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>When is the last date to apply?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            The last date to apply is announced at the beginning of the admission cycle (usually in June/July). Please regularly check the Admissions page and Notice Board for exact deadlines.
+          </div>
+        </details>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What documents are required during admission?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Typically required documents include Class 10 and 12 mark sheets, admit cards, recent passport-size photograph, signature, caste certificate (if applicable), and migration certificate (for students from other boards).
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What is the fee structure?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            The fee structure varies by course and is subject to change. A detailed fee breakdown is available in the admission brochure and on the designated Fees portal.
+          </div>
+        </details>
+      </div>
+
+      <!-- Academic -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl font-bold text-primary mb-6 border-b border-outline-variant/50 pb-2">Academic</h2>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What is the Choice Based Credit System (CBCS)?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            CBCS offers students a choice to select courses from prescribed core, elective, or skill-based courses. It provides a 'cafeteria' type approach where students can take courses of their choice and learn at their own pace.
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What is the course structure under NEP 2020?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Following NEP 2020, UG programs are 4-year multidisciplinary courses with multiple entry and exit options, emphasizing holistic learning, skill development, and research.
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>What is the mandatory attendance requirement?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Students are generally required to maintain a minimum of 75% attendance in both theory and practical classes to be eligible to appear for university examinations.
+          </div>
+        </details>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>Where can I find the syllabus for my course?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            The detailed syllabus for all courses can be found under the Academics section of our website or directly from the respective department pages.
+          </div>
+        </details>
+      </div>
+
+      <!-- Examinations -->
+      <div class="space-y-4">
+        <h2 class="font-display text-2xl font-bold text-primary mb-6 border-b border-outline-variant/50 pb-2">Examinations</h2>
+        
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>Where can I check the exam schedule?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Exam schedules are published on the college Notice Board and the Examination section of the website. Additionally, university exam dates are notified via the University of Gour Banga portal.
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>How are internal marks calculated?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Internal marks are calculated based on continuous assessments which include internal tests, assignments, project work, and class attendance as per university guidelines.
+          </div>
+        </details>
+
+        <details class="glass-card overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 font-semibold text-lg text-on-surface hover:text-primary transition-colors">
+            <span>When and how do I get my final marksheet?</span>
+            <span class="material-symbols-outlined toggle-icon text-outline transition-transform duration-300">add</span>
+          </summary>
+          <div class="answer-panel px-6 pb-6 pt-0 text-on-surface-variant leading-relaxed">
+            Mark sheets are distributed from the college office after the declaration of university results. Notifications regarding the distribution schedule will be posted on the college website.
+          </div>
+        </details>
+      </div>
+
+      <!-- CTA -->
+      <div class="glass-card p-8 md:p-12 text-center mt-16 bg-surface-container-low/50">
+        <h3 class="font-display text-2xl font-bold text-primary mb-4">Still have questions?</h3>
+        <p class="text-on-surface-variant mb-8 max-w-lg mx-auto">If you couldn't find the answer to your question, feel free to reach out to our administration team.</p>
+        <a href="contact.html" class="inline-flex items-center justify-center space-x-2 bg-primary text-on-primary font-semibold py-3 px-8 rounded-full hover:bg-primary-container transition-all hover:-translate-y-1 shadow-md">
+          <span>Contact Us</span>
+          <span class="material-symbols-outlined text-sm">mail</span>
+        </a>
+      </div>
+
+    </section>
+  </main>
+  
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

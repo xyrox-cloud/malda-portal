@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Malda College</title>
+  <meta name="description" content="Malda College - A premier institution in North Bengal, empowering minds since 1944."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+          "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+          "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+          "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+          "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#74777f", "outline-variant": "#c4c6cf",
+          "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+          "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+          "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+          "tertiary": "#040607", "tertiary-container": "#1c1f20",
+          "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+          "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+          "on-tertiary-container": "#848688",
+          "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+          "surface-tint": "#476083"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px",
+          "section-padding": "120px", "margin-mobile": "20px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    body.glass-mode {
+      background: #000613;
+      background-image: radial-gradient(circle at 10% 20%, rgba(0,31,63,0.8) 0%, transparent 60%),
+        radial-gradient(circle at 90% 80%, rgba(254,214,91,0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(40px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px rgba(0,6,19,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(0,6,19,0.6);
+    }
+    .bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      animation: pulse 10s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 72px; /* Nav height */
+    }
+    #hero-canvas {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="antialiased glass-mode text-on-primary" data-page="index">
+  <!-- Nav injected by nav.js -->
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,31,63,0.5)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(254,214,91,0.1)"></div>
+  </div>
+
+  <main class="main-pad">
+    <!-- HERO -->
+    <section class="hero-section">
+      <canvas id="hero-canvas"></canvas>
+      <div class="max-w-[1280px] mx-auto px-6 w-full relative z-10 text-center">
+        <div class="inline-block glass-card px-4 py-2 mb-6 rounded-full">
+          <span class="text-sm font-semibold tracking-wider uppercase text-secondary-fixed">NAAC B+ Accredited</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <span lang="en">Empowering Minds.</span> <span lang="bn" class="hidden">মননশীলতার ক্ষমতায়ন।</span><br/>
+          <span class="text-secondary-fixed">Legacy of Excellence since 1944.</span>
+        </h1>
+        <p class="font-body text-lg md:text-xl text-on-primary/80 mb-10 max-w-2xl mx-auto">
+          Welcome to Malda College, a premier institution in North Bengal affiliated to the University of Gour Banga, nurturing talents and shaping futures.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="admissions.html" class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-full font-semibold hover:-translate-y-1 transition-transform">Apply for Admission 2026</a>
+          <a href="courses.html" class="border border-outline-variant px-8 py-3 rounded-full font-semibold hover:-translate-y-1 transition-transform">Explore Courses</a>
+        </div>
+      </div>
+      
+      <!-- QUICK STATS -->
+      <div class="absolute bottom-10 left-0 w-full px-6">
+        <div class="max-w-[1000px] mx-auto glass-card p-6 flex flex-wrap justify-between items-center text-center gap-4">
+          <div class="flex-1 min-w-[150px]">
+            <div class="text-3xl font-display font-bold text-secondary-fixed">1944</div>
+            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Founded</div>
+          </div>
+          <div class="w-px h-12 bg-white/20 hidden md:block"></div>
+          <div class="flex-1 min-w-[150px]">
+            <div class="text-3xl font-display font-bold text-secondary-fixed">20+</div>
+            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Departments</div>
+          </div>
+          <div class="w-px h-12 bg-white/20 hidden md:block"></div>
+          <div class="flex-1 min-w-[150px]">
+            <div class="text-3xl font-display font-bold text-secondary-fixed">5000+</div>
+            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Students</div>
+          </div>
+          <div class="w-px h-12 bg-white/20 hidden md:block"></div>
+          <div class="flex-1 min-w-[150px]">
+            <div class="text-3xl font-display font-bold text-secondary-fixed">B+</div>
+            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">NAAC Grade</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST NOTICES -->
+    <section class="py-section-padding px-6 max-w-[1280px] mx-auto">
+      <div class="mb-12">
+        <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Stay Updated</span>
+        <h2 class="font-display text-3xl font-semibold">Latest Notices</h2>
+        <p class="text-on-primary/70 mt-2">Important announcements and updates for students and staff.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 flex flex-col group">
+          <div class="flex justify-between items-start mb-4">
+            <span class="bg-primary-container text-primary-fixed-dim px-3 py-1 rounded-full text-xs font-semibold">Admission</span>
+            <span class="text-sm opacity-60">Aug 15, 2026</span>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-4">UG Admission Merit List 2026 Published</h3>
+          <a href="notice-board.html" class="mt-auto text-secondary-fixed font-semibold flex items-center group-hover:text-secondary-fixed-dim transition-colors">
+            Read More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+        <div class="glass-card p-6 flex flex-col group">
+          <div class="flex justify-between items-start mb-4">
+            <span class="bg-primary-container text-primary-fixed-dim px-3 py-1 rounded-full text-xs font-semibold">Examination</span>
+            <span class="text-sm opacity-60">Aug 10, 2026</span>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-4">Semester VI Final Examination Schedule</h3>
+          <a href="notice-board.html" class="mt-auto text-secondary-fixed font-semibold flex items-center group-hover:text-secondary-fixed-dim transition-colors">
+            Read More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+        <div class="glass-card p-6 flex flex-col group">
+          <div class="flex justify-between items-start mb-4">
+            <span class="bg-primary-container text-primary-fixed-dim px-3 py-1 rounded-full text-xs font-semibold">General</span>
+            <span class="text-sm opacity-60">Aug 05, 2026</span>
+          </div>
+          <h3 class="font-display text-xl font-semibold mb-4">Independence Day Celebration Program</h3>
+          <a href="notice-board.html" class="mt-auto text-secondary-fixed font-semibold flex items-center group-hover:text-secondary-fixed-dim transition-colors">
+            Read More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC PROGRAMMES -->
+    <section class="py-section-padding px-6 max-w-[1280px] mx-auto">
+      <div class="mb-12">
+        <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Our Offerings</span>
+        <h2 class="font-display text-3xl font-semibold">Academic Programmes</h2>
+        <p class="text-on-primary/70 mt-2">Explore our diverse range of undergraduate courses.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <a href="subjects/physics.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">science</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">B.Sc. Hons</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">Physics</h3>
+          <p class="text-sm opacity-70 mb-4">Explore the fundamental principles of the universe.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a href="subjects/english.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">menu_book</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">B.A. Hons</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">English</h3>
+          <p class="text-sm opacity-70 mb-4">Delve into literature, language, and critical thinking.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+        <!-- Card 3 -->
+        <a href="subjects/bengali.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">language</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">B.A. Hons</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">Bengali</h3>
+          <p class="text-sm opacity-70 mb-4">Rich cultural heritage and literary studies in Bengali.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+        <!-- Card 4 -->
+        <a href="subjects/commerce.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">account_balance</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">B.Com Hons</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">Commerce</h3>
+          <p class="text-sm opacity-70 mb-4">Master the principles of business, finance, and trade.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+        <!-- Card 5 -->
+        <a href="subjects/bca.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">computer</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">BCA</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">BCA</h3>
+          <p class="text-sm opacity-70 mb-4">Build a strong foundation in computer applications.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+        <!-- Card 6 -->
+        <a href="subjects/mathematics.html" class="glass-card p-6 block group">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4">calculate</span>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">B.Sc. Hons</span>
+            <span class="border border-white/20 text-xs px-2 py-1 rounded">3 Years / 6 Semesters</span>
+          </div>
+          <h3 class="font-display text-2xl font-semibold mb-2 group-hover:text-secondary-fixed transition-colors">Mathematics</h3>
+          <p class="text-sm opacity-70 mb-4">Analytical and problem-solving skills for the future.</p>
+          <div class="text-secondary-fixed flex items-center">
+            Learn More <span class="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- WHY MALDA COLLEGE -->
+    <section class="py-section-padding px-6 max-w-[1280px] mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Excellence</span>
+        <h2 class="font-display text-3xl font-semibold">Why Malda College</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card p-6 text-center hover:scale-[1.02] transition-transform">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4 block" style="transform: rotateX(20deg) rotateY(-20deg);">school</span>
+          <h3 class="font-display text-xl font-semibold mb-2">Faculty Excellence</h3>
+          <p class="text-sm opacity-70">Learn from highly qualified and experienced educators dedicated to student success.</p>
+        </div>
+        <div class="glass-card p-6 text-center hover:scale-[1.02] transition-transform">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4 block" style="transform: rotateX(20deg) rotateY(-20deg);">biotech</span>
+          <h3 class="font-display text-xl font-semibold mb-2">Research & Innovation</h3>
+          <p class="text-sm opacity-70">Fostering a culture of critical thinking and advanced research opportunities.</p>
+        </div>
+        <div class="glass-card p-6 text-center hover:scale-[1.02] transition-transform">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4 block" style="transform: rotateX(20deg) rotateY(-20deg);">groups</span>
+          <h3 class="font-display text-xl font-semibold mb-2">Campus Life</h3>
+          <p class="text-sm opacity-70">Vibrant campus with numerous cells, clubs, and extracurricular activities.</p>
+        </div>
+        <div class="glass-card p-6 text-center hover:scale-[1.02] transition-transform">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-4 block" style="transform: rotateX(20deg) rotateY(-20deg);">trending_up</span>
+          <h3 class="font-display text-xl font-semibold mb-2">Career Support</h3>
+          <p class="text-sm opacity-70">Comprehensive guidance and placement support for future endeavors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS/GALLERY STRIP -->
+    <section class="py-section-padding px-6 max-w-[1280px] mx-auto">
+      <div class="mb-12 flex justify-between items-end">
+        <div>
+          <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Moments</span>
+          <h2 class="font-display text-3xl font-semibold">Campus Gallery</h2>
+        </div>
+        <a href="#" class="text-secondary-fixed font-semibold hover:underline hidden sm:block">View All</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card h-64 bg-white/5 rounded-2xl overflow-hidden relative group">
+          <div class="absolute inset-0 bg-primary-container/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl opacity-30">image</span>
+          </div>
+          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            <h4 class="font-semibold">Annual Sports Day</h4>
+          </div>
+        </div>
+        <div class="glass-card h-64 bg-white/5 rounded-2xl overflow-hidden relative group">
+          <div class="absolute inset-0 bg-primary-container/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl opacity-30">image</span>
+          </div>
+          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            <h4 class="font-semibold">Science Exhibition</h4>
+          </div>
+        </div>
+        <div class="glass-card h-64 bg-white/5 rounded-2xl overflow-hidden relative group">
+          <div class="absolute inset-0 bg-primary-container/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl opacity-30">image</span>
+          </div>
+          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+            <h4 class="font-semibold">Cultural Fest</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script>
+    if(window.MC && window.MC.initHeroShader) {
+      window.MC.initHeroShader('hero-canvas');
+    }
+  </script>
+</body>
+</html>

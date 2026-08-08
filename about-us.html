@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Malda College</title>
+  <meta name="description" content="Discover the rich heritage and educational excellence of Malda College, founded in 1944. Affiliated to University of Gour Banga."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+          "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+          "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+          "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+          "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#74777f", "outline-variant": "#c4c6cf",
+          "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+          "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+          "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+          "tertiary": "#040607", "tertiary-container": "#1c1f20",
+          "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+          "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+          "on-tertiary-container": "#848688",
+          "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+          "surface-tint": "#476083"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px",
+          "section-padding": "120px", "margin-mobile": "20px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .page-hero {
+      background-color: #000613;
+      color: #ffffff;
+      padding: 120px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 150%, rgba(115, 92, 0, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .bento-grid .glass-card {
+      padding: 32px 24px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="about-us">
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,6,19,0.05)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(115,92,0,0.05)"></div>
+  </div>
+
+  <main class="main-pad">
+    <section class="page-hero">
+      <div class="max-w-container-max mx-auto relative z-10">
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Our Heritage</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">About Malda College</h1>
+        <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
+          <a href="./index.html" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-on-primary">About Us</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-secondary font-bold tracking-widest uppercase text-sm mb-4">College History</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-6">80 Years of Educational Excellence</h2>
+          <p class="text-on-surface-variant font-body text-lg mb-4">
+            Founded in 1944, Malda College is one of the premier higher educational institutions in North Bengal. Situated on Rabindra Avenue in the historic city of Malda, West Bengal, the college has a glorious legacy of imparting quality education.
+          </p>
+          <p class="text-on-surface-variant font-body text-lg mb-4">
+            Initially affiliated to the University of Calcutta, and later to the University of North Bengal, the college is now affiliated to the University of Gour Banga. Established by the Government of West Bengal, Malda College is recognized by the UGC and is accredited with a <strong>NAAC B+ grade (2nd Cycle)</strong>.
+          </p>
+          <p class="text-on-surface-variant font-body text-lg">
+            Over the decades, the college has evolved into a vibrant academic community, catering to thousands of students and offering a wide array of undergraduate and postgraduate programs across Arts, Science, and Commerce disciplines.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="glass-card p-4 rounded-3xl overflow-hidden aspect-square">
+            <img src="./assets/images/college-heritage.jpg" alt="Malda College Campus" class="w-full h-full object-cover rounded-2xl bg-surface-container-high" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM3NDc3N2YiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNhbXB1cyBJbWFnZTwvdGV4dD48L3N2Zz4='"/>
+          </div>
+          <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl flex items-center gap-4">
+            <span class="material-symbols-outlined text-4xl text-secondary">history_edu</span>
+            <div>
+              <p class="text-2xl font-display font-bold">1944</p>
+              <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Year Founded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low py-section-padding px-gutter">
+      <div class="max-w-container-max mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="glass-card p-8 rounded-3xl group transition-transform hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-2xl bg-primary-fixed flex items-center justify-center mb-6 text-on-primary-fixed-variant group-hover:rotate-y-[20deg] group-hover:rotate-x-[20deg] transition-transform duration-300">
+              <span class="material-symbols-outlined text-3xl">visibility</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold mb-4">Our Vision</h3>
+            <p class="text-on-surface-variant font-body">
+              To emerge as a centre of excellence in higher education by imparting value-based quality education to the youth, empowering them to become responsible citizens and leaders of tomorrow. We strive to foster an environment of continuous learning, research, and innovation.
+            </p>
+          </div>
+          <div class="glass-card p-8 rounded-3xl group transition-transform hover:-translate-y-1">
+            <div class="w-16 h-16 rounded-2xl bg-secondary-container flex items-center justify-center mb-6 text-on-secondary-container group-hover:rotate-y-[20deg] group-hover:rotate-x-[20deg] transition-transform duration-300">
+              <span class="material-symbols-outlined text-3xl">rocket_launch</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold mb-4">Our Mission</h3>
+            <p class="text-on-surface-variant font-body">
+              To provide inclusive and equitable quality education. To enhance employability through skill development and holistic education. To promote ethical values, social responsibility, and cultural heritage among students. To facilitate research and academic growth among faculty and students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-secondary font-bold tracking-widest uppercase text-sm mb-4">At a Glance</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-12">Key Facts</h2>
+      
+      <div class="bento-grid">
+        <div class="glass-card rounded-2xl">
+          <p class="text-4xl font-display font-bold text-primary mb-2">1944</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Year Founded</p>
+        </div>
+        <div class="glass-card rounded-2xl">
+          <p class="text-4xl font-display font-bold text-primary mb-2">5000+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Students</p>
+        </div>
+        <div class="glass-card rounded-2xl">
+          <p class="text-4xl font-display font-bold text-primary mb-2">100+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Faculty</p>
+        </div>
+        <div class="glass-card rounded-2xl">
+          <p class="text-4xl font-display font-bold text-primary mb-2">20+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Departments</p>
+        </div>
+        <div class="glass-card rounded-2xl">
+          <p class="text-4xl font-display font-bold text-primary mb-2">B+</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">NAAC Grade</p>
+        </div>
+        <div class="glass-card rounded-2xl">
+          <p class="text-2xl font-display font-bold text-primary mb-2">Gour Banga</p>
+          <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant">Affiliation</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low py-section-padding px-gutter">
+      <div class="max-w-container-max mx-auto text-center">
+        <p class="text-secondary font-bold tracking-widest uppercase text-sm mb-4">Administration</p>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-12">Leadership</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Principal -->
+          <div class="glass-card rounded-3xl p-6 text-center transition-transform hover:-translate-y-1">
+            <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high mb-6 overflow-hidden">
+              <img src="./assets/images/placeholder-avatar.jpg" alt="Principal" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48cGF0aCBkPSJNMTAwIDE0MGExMCAxMCAwIDAgMCAxMC0xMGwtMjAtMjBhMzAgMzAgMCAwIDEgMjAtMjBsMjAgMjBhMTAgMTAgMCAwIDAgMTAtMTBWMzBBMTAgMTAgMCAwIDAgMTMwIDIwaC02MGExMCAxMCAwIDAgMCAxMCAxMHY5MGwtMjAgMjBhMTAgMTAgMCAwIDAgMTAgMTB6IiBmaWxsPSIjNzQ3NzdmIi8+PC9zdmc+'" />
+            </div>
+            <h3 class="font-display text-xl font-bold mb-1">Dr. Manas Kumar Baidya</h3>
+            <p class="text-secondary font-semibold text-sm mb-4">Principal</p>
+            <a href="./principals-desk.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors">
+              Read Message <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+
+          <!-- Vice Principal -->
+          <div class="glass-card rounded-3xl p-6 text-center transition-transform hover:-translate-y-1">
+            <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high mb-6 overflow-hidden">
+              <img src="./assets/images/placeholder-avatar2.jpg" alt="Vice Principal" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48cGF0aCBkPSJNMTAwIDE0MGExMCAxMCAwIDAgMCAxMC0xMGwtMjAtMjBhMzAgMzAgMCAwIDEgMjAtMjBsMjAgMjBhMTAgMTAgMCAwIDAgMTAtMTBWMzBBMTAgMTAgMCAwIDAgMTMwIDIwaC02MGExMCAxMCAwIDAgMCAxMCAxMHY5MGwtMjAgMjBhMTAgMTAgMCAwIDAgMTAgMTB6IiBmaWxsPSIjNzQ3NzdmIi8+PC9zdmc+'" />
+            </div>
+            <h3 class="font-display text-xl font-bold mb-1">Dr. [Vice Principal]</h3>
+            <p class="text-secondary font-semibold text-sm mb-4">Vice-Principal</p>
+          </div>
+
+          <!-- IQAC Coordinator -->
+          <div class="glass-card rounded-3xl p-6 text-center transition-transform hover:-translate-y-1">
+            <div class="w-32 h-32 mx-auto rounded-full bg-surface-container-high mb-6 overflow-hidden">
+              <img src="./assets/images/placeholder-avatar3.jpg" alt="IQAC Coordinator" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48cGF0aCBkPSJNMTAwIDE0MGExMCAxMCAwIDAgMCAxMC0xMGwtMjAtMjBhMzAgMzAgMCAwIDEgMjAtMjBsMjAgMjBhMTAgMTAgMCAwIDAgMTAtMTBWMzBBMTAgMTAgMCAwIDAgMTMwIDIwaC02MGExMCAxMCAwIDAgMCAxMCAxMHY5MGwtMjAgMjBhMTAgMTAgMCAwIDAgMTAgMTB6IiBmaWxsPSIjNzQ3NzdmIi8+PC9zdmc+'" />
+            </div>
+            <h3 class="font-display text-xl font-bold mb-1">Dr. [Coordinator Name]</h3>
+            <p class="text-secondary font-semibold text-sm mb-4">IQAC Coordinator</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-secondary font-bold tracking-widest uppercase text-sm mb-4">Quality & Standards</p>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-on-surface mb-12">Accreditation & Recognition</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-primary">verified</span>
+          <h3 class="font-display text-xl font-bold">NAAC B+ Accredited</h3>
+          <p class="text-sm text-on-surface-variant">2nd Cycle Assessment</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-primary">account_balance</span>
+          <h3 class="font-display text-xl font-bold">UGC Recognized</h3>
+          <p class="text-sm text-on-surface-variant">Under Sections 2(f) and 12(B)</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center gap-4">
+          <span class="material-symbols-outlined text-4xl text-primary">school</span>
+          <h3 class="font-display text-xl font-bold">Affiliated to UGB</h3>
+          <p class="text-sm text-on-surface-variant">University of Gour Banga</p>
+        </div>
+      </div>
+
+      <div class="glass-card p-12 rounded-3xl bg-primary text-on-primary text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 text-white">Join Our Academic Community</h2>
+        <p class="text-on-primary-container text-lg mb-8 max-w-2xl mx-auto">Take the first step towards a brilliant future. Explore our programs and start your application process today.</p>
+        <a href="./admissions.html" class="inline-flex items-center justify-center px-8 py-4 bg-secondary-container text-on-secondary-container rounded-full font-bold hover:-translate-y-1 transition-transform active:scale-95 shadow-lg shadow-secondary-container/20">
+          Apply Now <span class="material-symbols-outlined ml-2">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

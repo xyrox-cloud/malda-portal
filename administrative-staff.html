@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administrative & Support Staff | Malda College</title>
+  <meta name="description" content="Meet the administrative and support staff of Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "outline": "#74777f", "outline-variant": "#c4c6cf"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px", "section-padding": "120px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .page-hero {
+      background-color: #000613;
+      color: #ffffff;
+      padding: 120px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 150%, rgba(115, 92, 0, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .glass-table-wrapper {
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5); border-radius: 1.5rem;
+      overflow: hidden; box-shadow: 0 20px 40px rgba(0,31,63,0.05);
+    }
+    .glass-table { width: 100%; border-collapse: collapse; }
+    .glass-table th { background: rgba(0, 31, 63, 0.05); color: #001f3f; font-weight: 600; text-align: left; padding: 16px 24px; border-bottom: 2px solid rgba(0, 31, 63, 0.1); }
+    .glass-table td { padding: 16px 24px; border-bottom: 1px solid rgba(0, 31, 63, 0.05); color: #43474e; }
+    .glass-table tr:hover td { background: rgba(0, 31, 63, 0.02); }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="administrative-staff">
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,6,19,0.05)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(115,92,0,0.05)"></div>
+  </div>
+
+  <main class="main-pad">
+    <section class="page-hero">
+      <div class="max-w-container-max mx-auto relative z-10">
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Our Team</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Administrative & Support Staff</h1>
+        <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
+          <a href="./index.html" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">Administration</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-on-primary">Admin Staff</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      
+      <!-- Toolbar -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+        <div class="relative w-full md:w-96">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+          <input type="text" id="staff-search" data-search-input placeholder="Search by name, designation or dept..." class="w-full pl-12 pr-4 py-3 bg-surface rounded-full border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow glass-card">
+        </div>
+        
+        <div class="flex items-center gap-2 bg-surface-container-high rounded-lg p-1">
+          <button id="view-table" class="p-2 rounded-md bg-surface text-primary shadow-sm flex items-center transition-all" aria-label="Table View">
+            <span class="material-symbols-outlined">table_rows</span>
+          </button>
+          <button id="view-cards" class="p-2 rounded-md text-on-surface-variant hover:text-primary transition-all flex items-center" aria-label="Card View">
+            <span class="material-symbols-outlined">grid_view</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Data Container -->
+      <div id="staff-container" class="view-table-active">
+        
+        <!-- Table View -->
+        <div id="table-view" class="glass-table-wrapper overflow-x-auto">
+          <table class="glass-table min-w-[800px]">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Department</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri Arabinda Mondal</td>
+                <td class="staff-designation">Head Clerk</td>
+                <td class="staff-dept">General Office</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Accountant</td>
+                <td class="staff-dept">Accounts Section</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Smt. [Name]</td>
+                <td class="staff-designation">Cashier</td>
+                <td class="staff-dept">Accounts Section</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Clerk</td>
+                <td class="staff-dept">General Office</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Library Assistant</td>
+                <td class="staff-dept">Central Library</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Library Attendant</td>
+                <td class="staff-dept">Central Library</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Laboratory Attendant</td>
+                <td class="staff-dept">Physics</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Laboratory Attendant</td>
+                <td class="staff-dept">Chemistry</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Peon</td>
+                <td class="staff-dept">General Office</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+              <tr class="staff-row">
+                <td class="font-bold text-on-surface staff-name">Sri [Name]</td>
+                <td class="staff-designation">Guard</td>
+                <td class="staff-dept">Security</td>
+                <td><a href="#" class="text-primary hover:underline">Contact</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Cards View (Hidden by default) -->
+        <div id="cards-view" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated by JS based on table rows to avoid duplication in HTML for this demo -->
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script>
+    // Search and View Toggle Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('staff-search');
+      const tableRows = document.querySelectorAll('.staff-row');
+      
+      const btnTable = document.getElementById('view-table');
+      const btnCards = document.getElementById('view-cards');
+      const tableView = document.getElementById('table-view');
+      const cardsView = document.getElementById('cards-view');
+
+      // Generate cards from table data
+      tableRows.forEach(row => {
+        const name = row.querySelector('.staff-name').textContent;
+        const desig = row.querySelector('.staff-designation').textContent;
+        const dept = row.querySelector('.staff-dept').textContent;
+        
+        const card = document.createElement('div');
+        card.className = 'staff-card glass-card p-6 rounded-2xl';
+        card.innerHTML = `
+          <div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined">person</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1 staff-name-card">${name}</h3>
+          <p class="text-secondary font-semibold text-sm mb-1 staff-designation-card">${desig}</p>
+          <p class="text-on-surface-variant text-sm staff-dept-card">${dept}</p>
+        `;
+        cardsView.appendChild(card);
+      });
+
+      const cards = document.querySelectorAll('.staff-card');
+
+      // Search functionality
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        
+        // Filter table
+        tableRows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(term) ? '' : 'none';
+        });
+
+        // Filter cards
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(term) ? '' : 'none';
+        });
+      });
+
+      // View toggle
+      btnTable.addEventListener('click', () => {
+        btnTable.className = 'p-2 rounded-md bg-surface text-primary shadow-sm flex items-center transition-all';
+        btnCards.className = 'p-2 rounded-md text-on-surface-variant hover:text-primary transition-all flex items-center';
+        tableView.classList.remove('hidden');
+        cardsView.classList.add('hidden');
+      });
+
+      btnCards.addEventListener('click', () => {
+        btnCards.className = 'p-2 rounded-md bg-surface text-primary shadow-sm flex items-center transition-all';
+        btnTable.className = 'p-2 rounded-md text-on-surface-variant hover:text-primary transition-all flex items-center';
+        cardsView.classList.remove('hidden');
+        tableView.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

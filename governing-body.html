@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Governing Body | Malda College</title>
+  <meta name="description" content="Members and functions of the Governing Body of Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+          "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "outline": "#74777f", "outline-variant": "#c4c6cf",
+          "primary-fixed": "#d4e3ff", "on-primary-fixed-variant": "#2f486a"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px",
+          "section-padding": "120px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .page-hero {
+      background-color: #000613;
+      color: #ffffff;
+      padding: 120px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 150%, rgba(115, 92, 0, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .glass-table-wrapper {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,31,63,0.05);
+    }
+    .glass-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .glass-table th {
+      background: rgba(0, 31, 63, 0.05);
+      color: #001f3f;
+      font-weight: 600;
+      text-align: left;
+      padding: 16px 24px;
+      border-bottom: 2px solid rgba(0, 31, 63, 0.1);
+    }
+    .glass-table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(0, 31, 63, 0.05);
+      color: #43474e;
+    }
+    .glass-table tr:last-child td {
+      border-bottom: none;
+    }
+    .glass-table tr:hover td {
+      background: rgba(0, 31, 63, 0.02);
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="governing-body">
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,6,19,0.05)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(115,92,0,0.05)"></div>
+  </div>
+
+  <main class="main-pad">
+    <section class="page-hero">
+      <div class="max-w-container-max mx-auto relative z-10">
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Governance</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Governing Body</h1>
+        <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
+          <a href="./index.html" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">Administration</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-on-primary">Governing Body</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="text-on-surface-variant font-body text-lg">
+          The Governing Body is the highest decision-making authority of Malda College. It is responsible for steering the college's strategic direction, ensuring academic excellence, managing resources efficiently, and upholding the values and mission of the institution.
+        </p>
+      </div>
+
+      <div class="glass-table-wrapper mb-24 overflow-x-auto">
+        <table class="glass-table min-w-[800px]">
+          <thead>
+            <tr>
+              <th class="w-16">Sl.No</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Nominated By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td class="font-bold text-on-surface">Sri [President Name]</td>
+              <td>President</td>
+              <td>State Government</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td class="font-bold text-on-surface">Dr. Manas Kumar Baidya</td>
+              <td>Principal & Secretary</td>
+              <td>Ex-Officio</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td class="font-bold text-on-surface">Prof. [Name]</td>
+              <td>Government Nominee</td>
+              <td>State Government</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td class="font-bold text-on-surface">Dr. [Name]</td>
+              <td>University Nominee</td>
+              <td>University of Gour Banga</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td class="font-bold text-on-surface">Dr. [Name]</td>
+              <td>Teacher Representative</td>
+              <td>Teachers' Council</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="font-bold text-on-surface">Prof. [Name]</td>
+              <td>Teacher Representative</td>
+              <td>Teachers' Council</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td class="font-bold text-on-surface">Prof. [Name]</td>
+              <td>Teacher Representative</td>
+              <td>Teachers' Council</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td class="font-bold text-on-surface">Sri [Name]</td>
+              <td>Non-Teaching Representative</td>
+              <td>Non-Teaching Staff</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td class="font-bold text-on-surface">Sri [Name]</td>
+              <td>Non-Teaching Representative</td>
+              <td>Non-Teaching Staff</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td class="font-bold text-on-surface">[Student Name]</td>
+              <td>Student Representative</td>
+              <td>Students' Union / Council</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2 class="font-display text-3xl font-bold text-center mb-12">Functions of the Governing Body</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card p-6 rounded-2xl">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4 block">policy</span>
+            <h3 class="font-bold text-lg mb-2">Policy Formulation</h3>
+            <p class="text-sm text-on-surface-variant">Developing and approving major institutional policies, rules, and regulations.</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4 block">account_balance</span>
+            <h3 class="font-bold text-lg mb-2">Financial Management</h3>
+            <p class="text-sm text-on-surface-variant">Approving the annual budget, monitoring expenditures, and ensuring financial stability.</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4 block">architecture</span>
+            <h3 class="font-bold text-lg mb-2">Infrastructure Dev.</h3>
+            <p class="text-sm text-on-surface-variant">Planning and overseeing the development of college infrastructure and facilities.</p>
+          </div>
+          <div class="glass-card p-6 rounded-2xl">
+            <span class="material-symbols-outlined text-4xl text-secondary mb-4 block">school</span>
+            <h3 class="font-bold text-lg mb-2">Academic Oversight</h3>
+            <p class="text-sm text-on-surface-variant">Reviewing academic performance, new courses, and ensuring quality standards are met.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAAC & IQAC | Malda College</title>
+  <meta name="description" content="NAAC Accreditation and Internal Quality Assurance Cell details of Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+          "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+          "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+          "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+          "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#74777f", "outline-variant": "#c4c6cf",
+          "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+          "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+          "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+          "tertiary": "#040607", "tertiary-container": "#1c1f20",
+          "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+          "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+          "on-tertiary-container": "#848688",
+          "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+          "surface-tint": "#476083"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px",
+          "section-padding": "120px", "margin-mobile": "20px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    body.glass-mode {
+      background: #000613;
+      background-image: radial-gradient(circle at 10% 20%, rgba(0,31,63,0.8) 0%, transparent 60%),
+        radial-gradient(circle at 90% 80%, rgba(254,214,91,0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(40px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px rgba(0,6,19,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(0,6,19,0.6);
+    }
+    .bg-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      animation: pulse 10s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body class="antialiased glass-mode text-on-primary" data-page="naac-iqac">
+  
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:20%;left:-10%;width:50vw;height:50vw;background:rgba(0,31,63,0.6)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(254,214,91,0.15)"></div>
+  </div>
+
+  <main class="main-pad pt-32 pb-20">
+    <!-- HERO -->
+    <section class="max-w-[1280px] mx-auto px-6 text-center mb-20">
+      <div class="text-sm font-semibold text-secondary-fixed uppercase tracking-widest mb-4">Quality Assurance</div>
+      <h1 class="font-display text-5xl md:text-6xl font-bold mb-6">NAAC & IQAC</h1>
+      <div class="text-sm opacity-70">
+        <a href="index.html" class="hover:text-secondary-fixed transition-colors">Home</a> <span class="mx-2">></span> <span>NAAC/IQAC</span>
+      </div>
+    </section>
+
+    <!-- NAAC ACCREDITATION -->
+    <section class="max-w-[1280px] mx-auto px-6 mb-20">
+      <div class="glass-card p-10 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1">
+          <h2 class="font-display text-3xl font-semibold mb-4">NAAC Accreditation</h2>
+          <p class="text-on-primary/80 mb-6 leading-relaxed">
+            Malda College has been continually striving for academic excellence. We are proud to be accredited by the National Assessment and Accreditation Council (NAAC) in our 2nd cycle of assessment.
+          </p>
+          <a href="https://www.naac.gov.in" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-white/10 hover:bg-white/20 px-6 py-2 rounded-full border border-white/20 transition-colors">
+            Visit NAAC Website <span class="material-symbols-outlined ml-2 text-sm">open_in_new</span>
+          </a>
+        </div>
+        <div class="w-full md:w-auto flex justify-center">
+          <div class="relative w-48 h-48 rounded-full border-4 border-secondary-fixed flex items-center justify-center bg-primary-container shadow-[0_0_50px_rgba(254,214,91,0.3)] animate-pulse">
+            <div class="text-center">
+              <div class="font-display text-5xl font-bold text-secondary-fixed">B+</div>
+              <div class="text-xs uppercase tracking-widest mt-2">2nd Cycle</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IQAC INFO -->
+    <section class="max-w-[1280px] mx-auto px-6 mb-20">
+      <div class="mb-12">
+        <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Internal Quality Assurance Cell</span>
+        <h2 class="font-display text-3xl font-semibold">IQAC Composition</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass-card p-6">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed mb-4">person</span>
+          <h3 class="font-bold text-lg mb-1">Chairperson</h3>
+          <p class="text-sm opacity-70">Principal, Malda College</p>
+        </div>
+        <div class="glass-card p-6">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed mb-4">group</span>
+          <h3 class="font-bold text-lg mb-1">Faculty Members</h3>
+          <p class="text-sm opacity-70">Senior Teachers from various departments</p>
+        </div>
+        <div class="glass-card p-6">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed mb-4">account_balance</span>
+          <h3 class="font-bold text-lg mb-1">Management</h3>
+          <p class="text-sm opacity-70">Governing Body Representative</p>
+        </div>
+        <div class="glass-card p-6">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed mb-4">school</span>
+          <h3 class="font-bold text-lg mb-1">Alumni & Students</h3>
+          <p class="text-sm opacity-70">Representatives contributing to growth</p>
+        </div>
+        <div class="glass-card p-6">
+          <span class="material-symbols-outlined text-3xl text-secondary-fixed mb-4">admin_panel_settings</span>
+          <h3 class="font-bold text-lg mb-1">Coordinator</h3>
+          <p class="text-sm opacity-70">Director / IQAC Coordinator</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IQAC ACTIVITIES -->
+    <section class="max-w-[1280px] mx-auto px-6 mb-20">
+      <div class="mb-12">
+        <h2 class="font-display text-3xl font-semibold">IQAC Activities</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="glass-card p-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-3 block">fact_check</span>
+          <h3 class="font-semibold mb-2">Academic Audit</h3>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-3 block">model_training</span>
+          <h3 class="font-semibold mb-2">Faculty Development</h3>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-3 block">forum</span>
+          <h3 class="font-semibold mb-2">Student Feedback</h3>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed mb-3 block">verified</span>
+          <h3 class="font-semibold mb-2">Best Practices</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- AQAR REPORTS -->
+    <section class="max-w-[1280px] mx-auto px-6 mb-20">
+      <div class="mb-8">
+        <h2 class="font-display text-3xl font-semibold">AQAR Reports</h2>
+      </div>
+      <div class="glass-card overflow-hidden">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-white/10 border-b border-white/20">
+              <th class="p-4 font-semibold">Academic Year</th>
+              <th class="p-4 font-semibold">Report Title</th>
+              <th class="p-4 font-semibold text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+              <td class="p-4">2024-2025</td>
+              <td class="p-4">Annual Quality Assurance Report</td>
+              <td class="p-4 text-right"><a href="#" class="text-secondary-fixed hover:underline">Download PDF</a></td>
+            </tr>
+            <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+              <td class="p-4">2023-2024</td>
+              <td class="p-4">Annual Quality Assurance Report</td>
+              <td class="p-4 text-right"><a href="#" class="text-secondary-fixed hover:underline">Download PDF</a></td>
+            </tr>
+            <tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+              <td class="p-4">2022-2023</td>
+              <td class="p-4">Annual Quality Assurance Report</td>
+              <td class="p-4 text-right"><a href="#" class="text-secondary-fixed hover:underline">Download PDF</a></td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="p-4">2021-2022</td>
+              <td class="p-4">Annual Quality Assurance Report</td>
+              <td class="p-4 text-right"><a href="#" class="text-secondary-fixed hover:underline">Download PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BEST PRACTICES -->
+    <section class="max-w-[1280px] mx-auto px-6">
+      <div class="mb-8">
+        <h2 class="font-display text-3xl font-semibold">Best Practices</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-6 flex gap-4">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed">eco</span>
+          <div>
+            <h3 class="font-bold text-xl mb-2">Green Campus Initiative</h3>
+            <p class="text-sm opacity-80">Sustainable practices including solar power usage, rainwater harvesting, and continuous plantation drives to ensure a carbon-neutral campus.</p>
+          </div>
+        </div>
+        <div class="glass-card p-6 flex gap-4">
+          <span class="material-symbols-outlined text-4xl text-secondary-fixed">digital_wellbeing</span>
+          <div>
+            <h3 class="font-bold text-xl mb-2">Digital Empowerment</h3>
+            <p class="text-sm opacity-80">Integration of ICT in teaching-learning processes, automated library services, and online student portals for seamless academic administration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

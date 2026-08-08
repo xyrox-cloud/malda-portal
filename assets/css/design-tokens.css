@@ -1,0 +1,100 @@
+/* ============================================================
+   MALDA COLLEGE — DESIGN TOKENS
+   Material You color system + custom typography/spacing
+   ============================================================ */
+
+:root {
+  /* ── Color Palette ── */
+  --primary:                 #000613;
+  --on-primary:              #ffffff;
+  --primary-container:       #001f3f;
+  --on-primary-container:    #6f88ad;
+  --primary-fixed:           #d4e3ff;
+  --primary-fixed-dim:       #afc8f0;
+  --on-primary-fixed:        #001c3a;
+  --on-primary-fixed-variant:#2f486a;
+  --inverse-primary:         #afc8f0;
+
+  --secondary:               #735c00;
+  --on-secondary:            #ffffff;
+  --secondary-container:     #fed65b;
+  --on-secondary-container:  #745c00;
+  --secondary-fixed:         #ffe088;
+  --secondary-fixed-dim:     #e9c349;
+  --on-secondary-fixed:      #241a00;
+  --on-secondary-fixed-variant:#574500;
+
+  --tertiary:                #040607;
+  --on-tertiary:             #ffffff;
+  --tertiary-container:      #1c1f20;
+  --on-tertiary-container:   #848688;
+  --tertiary-fixed:          #e1e3e4;
+  --tertiary-fixed-dim:      #c5c7c8;
+  --on-tertiary-fixed:       #191c1d;
+  --on-tertiary-fixed-variant:#454748;
+
+  --error:                   #ba1a1a;
+  --on-error:                #ffffff;
+  --error-container:         #ffdad6;
+  --on-error-container:      #93000a;
+
+  --background:              #faf9fc;
+  --on-background:           #1a1c1e;
+  --surface:                 #faf9fc;
+  --on-surface:              #1a1c1e;
+  --surface-variant:         #e3e2e5;
+  --on-surface-variant:      #43474e;
+  --surface-dim:             #dbd9dd;
+  --surface-bright:          #faf9fc;
+  --surface-container-lowest:#ffffff;
+  --surface-container-low:   #f4f3f6;
+  --surface-container:       #efedf0;
+  --surface-container-high:  #e9e7eb;
+  --surface-container-highest:#e3e2e5;
+  --surface-tint:            #476083;
+  --surface-inverse:         #2f3033;
+
+  --outline:                 #74777f;
+  --outline-variant:         #c4c6cf;
+  --inverse-surface:         #2f3033;
+  --inverse-on-surface:      #f2f0f3;
+
+  /* ── Spacing ── */
+  --gutter:          24px;
+  --margin-mobile:   20px;
+  --container-max:   1280px;
+  --section-padding: 120px;
+  --unit:            8px;
+
+  /* ── Typography ── */
+  --font-display:    'Playfair Display', serif;
+  --font-body:       'Inter', sans-serif;
+
+  /* ── Border Radius ── */
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    12px;
+  --radius-xl:    16px;
+  --radius-2xl:   24px;
+  --radius-full:  9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 4px 14px rgba(0,6,19,0.08);
+  --shadow-md:   0 10px 30px rgba(0,31,63,0.08);
+  --shadow-lg:   0 20px 40px rgba(0,31,63,0.08);
+  --shadow-xl:   0 30px 60px rgba(0,31,63,0.12);
+
+  /* ── Transitions ── */
+  --transition-fast:   150ms ease;
+  --transition-base:   300ms ease;
+  --transition-slow:   500ms ease;
+}
+
+/* Liquid Glass dark mode overrides (applied via .glass-mode class on body) */
+body.glass-mode {
+  --background:     #000613;
+  --on-background:  #ffffff;
+  --surface:        #000613;
+  --on-surface:     #ffffff;
+  --shadow-lg:      0 20px 40px rgba(0,6,19,0.4);
+}

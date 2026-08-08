@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Directory | Malda College</title>
+  <meta name="description" content="Meet the esteemed faculty members of Malda College across Arts, Science, Commerce, and Professional departments."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .glass-card {
+      background: rgba(255,255,255,0.70);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.50);
+      box-shadow: 0 10px 30px rgba(0,31,63,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,31,63,0.12);
+    }
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(0,6,19,0.9) 0%, rgba(0,31,63,0.8) 100%);
+    }
+    .filter-btn {
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: #000613;
+      color: #ffffff;
+      border-color: #000613;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="faculty">
+
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+  </div>
+
+  <main class="pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 lg:pt-32 lg:pb-40 hero-bg text-on-primary">
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6 relative z-10">
+        <div class="flex items-center gap-2 text-sm font-medium text-inverse-primary mb-6">
+          <a href="index.html" class="hover:text-on-primary transition-colors">Home</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <span>Faculty</span>
+        </div>
+        <div class="max-w-3xl">
+          <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Our Faculty</p>
+          <h1 class="font-display text-4xl lg:text-6xl font-bold leading-tight mb-6">Faculty Directory</h1>
+          <p class="text-lg lg:text-xl text-primary-fixed-dim font-body max-w-2xl">
+            Meet our dedicated team of educators and researchers committed to academic excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="py-12 border-b border-surface-variant">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6">
+        <div class="flex flex-col md:flex-row gap-6 justify-between items-center">
+          
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn active px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-filter="all">All</button>
+            <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-filter="arts">Arts</button>
+            <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-filter="science">Science</button>
+            <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-filter="commerce">Commerce</button>
+            <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-filter="bca">BCA</button>
+          </div>
+
+          <div class="relative w-full md:w-72">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+            <input type="text" id="faculty-search" placeholder="Search by name or dept..." class="w-full pl-10 pr-4 py-2 bg-surface border border-outline-variant rounded-xl focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors" data-search-input>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Grid -->
+    <section class="py-16">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="faculty-grid">
+          
+          <!-- Card 1 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="science" data-search-item="dr amit kumar physics professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">Physics</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Dr. Amit Kumar</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Associate Professor & HOD</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Specialization in Condensed Matter Physics and Quantum Mechanics.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:amit@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="arts" data-search-item="dr sunita das english assistant professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">English</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Dr. Sunita Das</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Assistant Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Expert in Post-colonial Literature and Indian English Writings.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:sunita@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="science" data-search-item="dr rakesh mondal chemistry assistant professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">Chemistry</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Dr. Rakesh Mondal</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Assistant Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Focuses on Organic Synthesis and Green Chemistry.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:rakesh@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="commerce" data-search-item="prof anil gupta commerce associate professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">Commerce</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Prof. Anil Gupta</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Associate Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Specializes in Corporate Finance and Accounting.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:anil@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="bca" data-search-item="mr debashis roy computer application assistant professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">BCA</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Mr. Debashis Roy</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Assistant Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Teaches Software Engineering and Database Systems.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:debashis@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="arts" data-search-item="dr monika sen history professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">History</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Dr. Monika Sen</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Professor & HOD</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Expert in Ancient Indian History and Epigraphy.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:monika@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="science" data-search-item="dr vikram bose mathematics assistant professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">Mathematics</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Dr. Vikram Bose</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Assistant Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Focus on Abstract Algebra and Topology.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:vikram@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="glass-card rounded-2xl overflow-hidden flex flex-col" data-dept="arts" data-search-item="ms priyanka saha political science assistant professor">
+            <div class="h-48 bg-surface-variant w-full relative">
+              <span class="absolute top-4 left-4 bg-primary text-on-primary text-xs px-2 py-1 rounded font-bold uppercase">Pol. Science</span>
+            </div>
+            <div class="p-6 flex-grow flex flex-col">
+              <h3 class="font-display text-xl font-bold mb-1">Ms. Priyanka Saha</h3>
+              <p class="text-secondary font-medium text-sm mb-3">Assistant Professor</p>
+              <p class="text-sm text-on-surface-variant mb-4 flex-grow">Specializes in International Relations and Public Policy.</p>
+              <div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+                <a href="mailto:priyanka@maldacollege.ac.in" class="text-outline hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined">mail</span>
+                </a>
+                <button class="text-sm font-medium text-primary hover:text-secondary transition-colors">View Profile</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <!-- Pagination -->
+        <div class="mt-12 flex items-center justify-center gap-2">
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:bg-surface-variant transition-colors" disabled>
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-on-primary font-medium">1</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:bg-surface-variant transition-colors font-medium">2</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant hover:bg-surface-variant transition-colors font-medium">3</button>
+          <button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant text-outline hover:bg-surface-variant transition-colors">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('faculty-search');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('[data-search-item]');
+      let activeFilter = 'all';
+
+      function applyFilters() {
+        const query = searchInput.value.toLowerCase();
+        
+        cards.forEach(card => {
+          const text = card.getAttribute('data-search-item');
+          const dept = card.getAttribute('data-dept');
+          
+          const matchesSearch = text.includes(query);
+          const matchesFilter = activeFilter === 'all' || dept === activeFilter;
+
+          if (matchesSearch && matchesFilter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active', 'bg-primary', 'text-on-primary'));
+          btn.classList.add('active');
+          activeFilter = btn.getAttribute('data-filter');
+          applyFilters();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Principal's Desk | Malda College</title>
+  <meta name="description" content="Message from the Principal of Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+          "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+          "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+          "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+          "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+          "surface-container-lowest": "#ffffff",
+          "outline": "#74777f", "outline-variant": "#c4c6cf",
+          "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+          "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+          "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+          "tertiary": "#040607", "tertiary-container": "#1c1f20",
+          "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+          "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+          "on-tertiary-container": "#848688",
+          "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+          "surface-tint": "#476083"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px",
+          "section-padding": "120px", "margin-mobile": "20px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .page-hero {
+      background-color: #000613;
+      color: #ffffff;
+      padding: 120px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 150%, rgba(115, 92, 0, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .pull-quote {
+      border-left: 4px solid #735c00;
+      background: #efedf0;
+      padding: 24px 32px;
+      border-radius: 0 16px 16px 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #001f3f;
+      margin: 32px 0;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="principals-desk">
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,6,19,0.05)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(115,92,0,0.05)"></div>
+  </div>
+
+  <main class="main-pad">
+    <section class="page-hero">
+      <div class="max-w-container-max mx-auto relative z-10">
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Leadership</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Principal's Desk</h1>
+        <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
+          <a href="./index.html" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">Administration</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-on-primary">Principal's Desk</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="glass-card rounded-3xl p-8 md:p-12">
+        <div class="flex flex-col md:flex-row gap-12">
+          
+          <!-- Profile Sidebar -->
+          <div class="md:w-[300px] shrink-0 text-center md:text-left">
+            <div class="w-full aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-surface-container-high border border-outline-variant shadow-lg shadow-primary/10">
+              <img src="./assets/images/principal.jpg" alt="Dr. Manas Kumar Baidya" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNlOWU3ZWIiLz48cGF0aCBkPSJNMTAwIDE0MGExMCAxMCAwIDAgMCAxMC0xMGwtMjAtMjBhMzAgMzAgMCAwIDEgMjAtMjBsMjAgMjBhMTAgMTAgMCAwIDAgMTAtMTBWMzBBMTAgMTAgMCAwIDAgMTMwIDIwaC02MGExMCAxMCAwIDAgMCAxMCAxMHY5MGwtMjAgMjBhMTAgMTAgMCAwIDAgMTAgMTB6IiBmaWxsPSIjNzQ3NzdmIi8+PC9zdmc+'"/>
+            </div>
+            <h2 class="font-display text-2xl font-bold mb-1">Dr. Manas Kumar Baidya</h2>
+            <p class="text-secondary font-bold text-sm uppercase tracking-wider mb-2">Principal, Malda College</p>
+            <p class="text-on-surface-variant text-sm mb-6">M.Sc., Ph.D.</p>
+
+            <div class="glass-card p-6 rounded-2xl bg-surface-container-low text-left">
+              <h3 class="font-bold text-sm uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Contact Details</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-secondary text-xl">mail</span>
+                  <div>
+                    <p class="text-sm font-semibold">Email</p>
+                    <a href="mailto:principal@maldacollege.ac.in" class="text-sm text-on-surface-variant hover:text-primary break-all">principal@maldacollege.ac.in</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-secondary text-xl">call</span>
+                  <div>
+                    <p class="text-sm font-semibold">Phone</p>
+                    <a href="tel:+9103512220808" class="text-sm text-on-surface-variant hover:text-primary">+91 03512 220808</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-secondary text-xl">schedule</span>
+                  <div>
+                    <p class="text-sm font-semibold">Office Hours</p>
+                    <p class="text-sm text-on-surface-variant">Mon - Fri: 10:30 AM - 4:30 PM</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Message Content -->
+          <div class="flex-1 prose prose-lg max-w-none text-on-surface-variant">
+            <h2 class="font-display text-3xl font-bold text-primary mb-6">Welcome to Malda College</h2>
+            
+            <p class="mb-4">
+              It is my distinct privilege and immense pleasure to welcome you to Malda College, a premier institution of higher education in North Bengal. Established in 1944, our college has continuously strived to be a beacon of knowledge and empowerment for generations of students.
+            </p>
+            
+            <p class="mb-4">
+              As we navigate the complexities of the 21st century, the role of education has transcended traditional boundaries. We are not merely focused on academic excellence, but on holistic development. Our dedicated faculty members are committed to providing a conducive environment that fosters critical thinking, creativity, and ethical values.
+            </p>
+
+            <div class="pull-quote">
+              "Education is the most powerful weapon which you can use to change the world. At Malda College, we are dedicated to forging this weapon with care, discipline, and a vision for a brighter tomorrow."
+            </div>
+
+            <p class="mb-4">
+              I am proud to mention that our recent re-accreditation by NAAC with a B+ grade (2nd Cycle) is a testament to our unwavering commitment to quality education. We are continuously upgrading our infrastructure, introducing new add-on courses, and emphasizing research and extension activities.
+            </p>
+
+            <p class="mb-4">
+              To our dear students: your time here is a crucial stepping stone. Embrace the opportunities, participate actively in co-curricular and extracurricular activities, and utilize the resources available to you. Let us work together to uphold the glorious legacy of Malda College and scale new heights of success.
+            </p>
+
+            <p class="mt-8 font-semibold text-primary">
+              Warm regards,<br>
+              Dr. Manas Kumar Baidya<br>
+              Principal, Malda College
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

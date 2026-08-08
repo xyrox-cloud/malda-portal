@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code of Conduct | Malda College</title>
+  <meta name="description" content="Code of Conduct for teaching and non-teaching staff of Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#000613", "on-primary": "#ffffff",
+          "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+          "secondary": "#735c00", "on-secondary": "#ffffff",
+          "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+          "secondary-fixed": "#ffe088", "background": "#faf9fc", "surface": "#faf9fc",
+          "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+          "surface-variant": "#e3e2e5", "surface-container-low": "#f4f3f6",
+          "outline": "#74777f", "outline-variant": "#c4c6cf"
+        },
+        fontFamily: {
+          "display": ["Playfair Display", "serif"],
+          "body": ["Inter", "sans-serif"]
+        },
+        spacing: {
+          "gutter": "24px", "container-max": "1280px", "section-padding": "120px"
+        }
+      }
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .page-hero {
+      background-color: #000613;
+      color: #ffffff;
+      padding: 120px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 50% 150%, rgba(115, 92, 0, 0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .numbered-list {
+      counter-reset: custom-counter;
+      list-style: none;
+      padding: 0;
+    }
+    .numbered-list > li {
+      position: relative;
+      padding-left: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .numbered-list > li::before {
+      counter-increment: custom-counter;
+      content: counter(custom-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: #000613;
+      color: #fed65b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="code-of-conduct">
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:rgba(0,6,19,0.05)"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(115,92,0,0.05)"></div>
+  </div>
+
+  <main class="main-pad">
+    <section class="page-hero">
+      <div class="max-w-container-max mx-auto relative z-10">
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Policies</p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Code of Conduct</h1>
+        <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
+          <a href="./index.html" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">Administration</a>
+          <span class="material-symbols-outlined text-sm">chevron_right</span>
+          <span class="text-on-primary">Code of Conduct</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-padding px-gutter max-w-container-max mx-auto">
+      <div class="flex flex-col lg:flex-row gap-12 items-start">
+        
+        <!-- Main Content -->
+        <div class="flex-1 glass-card p-8 md:p-12 rounded-3xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 border-b border-outline-variant pb-6">
+            <h2 class="font-display text-3xl font-bold">Staff Guidelines & Rules</h2>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full font-semibold hover:-translate-y-1 transition-transform active:scale-95 whitespace-nowrap">
+              <span class="material-symbols-outlined">download</span> Download PDF
+            </a>
+          </div>
+
+          <p class="text-on-surface-variant mb-8 text-lg">
+            The Code of Conduct outlines the expected standards of behavior for all teaching and non-teaching staff at Malda College, ensuring a professional, respectful, and productive academic environment.
+          </p>
+
+          <ol class="numbered-list text-on-surface-variant">
+            <li>
+              <strong class="text-on-surface block mb-1">Professional Integrity and Conduct</strong>
+              Staff members must maintain the highest standards of professional ethics. They should perform their duties honestly, impartially, and with dedication, avoiding any action that brings disrepute to the institution.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Punctuality and Attendance</strong>
+              Strict adherence to working hours is mandatory. Prior permission or sanctioned leave must be obtained before any absence from duty. Biometric attendance should be recorded daily as per college norms.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Academic Responsibility (For Teaching Staff)</strong>
+              Teachers must complete the syllabus within the stipulated time, evaluate internal assessments fairly, and remain available to students for academic mentoring and guidance.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Mutual Respect and Anti-Discrimination</strong>
+              Staff must treat colleagues, students, and visitors with respect and dignity. No discrimination based on caste, creed, religion, gender, or physical ability will be tolerated.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Use of College Resources</strong>
+              College property, equipment, and resources must be used strictly for official and academic purposes with care and responsibility to prevent damage or wastage.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Dress Code and Appearance</strong>
+              All staff members are expected to dress decently and professionally while on campus, reflecting the dignity of an educational institution.
+            </li>
+            <li>
+              <strong class="text-on-surface block mb-1">Confidentiality</strong>
+              Staff handling sensitive information (like examination papers, personal records, financial data) must maintain strict confidentiality and not disclose it to unauthorized persons.
+            </li>
+          </ol>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="w-full lg:w-80 shrink-0">
+          <div class="glass-card p-6 rounded-2xl sticky top-24">
+            <h3 class="font-display text-xl font-bold mb-4 pb-4 border-b border-outline-variant">Administration</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="./principals-desk.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-xl">person</span> Principal's Desk
+                </a>
+              </li>
+              <li>
+                <a href="./governing-body.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-xl">groups</span> Governing Body
+                </a>
+              </li>
+              <li>
+                <a href="./administrative-staff.html" class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-xl">support_agent</span> Administrative Staff
+                </a>
+              </li>
+              <li>
+                <a href="./code-of-conduct.html" class="flex items-center gap-3 p-3 rounded-lg bg-primary-container text-on-primary-container font-semibold transition-colors">
+                  <span class="material-symbols-outlined text-xl">gavel</span> Code of Conduct
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>

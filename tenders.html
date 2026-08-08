@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tenders & Quotations | Malda College</title>
+  <meta name="description" content="Official tenders, procurement notices, and quotations for Malda College."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    .glass-card {
+      background: rgba(255,255,255,0.70);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.50);
+      box-shadow: 0 10px 30px rgba(0,31,63,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,31,63,0.12);
+    }
+    .hero-bg {
+      background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(0,6,19,0.9) 0%, rgba(0,31,63,0.8) 100%);
+    }
+    .filter-btn {
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: #000613;
+      color: #ffffff;
+      border-color: #000613;
+    }
+  </style>
+</head>
+<body class="antialiased bg-background text-on-surface" data-page="tenders">
+
+  <div class="fixed inset-0 pointer-events-none z-[-1]">
+    <div class="bg-blob" style="top:-10%;left:-5%;width:50vw;height:50vw;background:#000613;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+    <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:#735c00;opacity:0.03;border-radius:50%;filter:blur(100px);position:absolute;"></div>
+  </div>
+
+  <main class="pt-[72px] pb-[60px] md:pb-0">
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-24 lg:pt-32 lg:pb-32 hero-bg text-on-primary">
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6 relative z-10">
+        <div class="flex items-center gap-2 text-sm font-medium text-inverse-primary mb-6">
+          <a href="index.html" class="hover:text-on-primary transition-colors">Home</a>
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+          <span>Tenders</span>
+        </div>
+        <div class="max-w-3xl">
+          <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Procurement</p>
+          <h1 class="font-display text-4xl lg:text-6xl font-bold leading-tight mb-6">Tenders & Quotations</h1>
+          <p class="text-lg lg:text-xl text-primary-fixed-dim font-body max-w-2xl">
+            Official notices inviting bids, quotations, and proposals for college procurement and services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="py-12 border-b border-surface-variant">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6">
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn active px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-status="all">All Tenders</button>
+          <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-status="open">Open</button>
+          <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-status="closed">Closed</button>
+          <button class="filter-btn px-4 py-2 border border-outline-variant rounded-full text-sm font-medium hover:bg-surface-variant" data-status="awarded">Awarded</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tenders List -->
+    <section class="py-16">
+      <div class="max-w-[1280px] mx-auto px-5 lg:px-6">
+        
+        <div class="grid gap-6" id="tender-list">
+          
+          <!-- Tender 1 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="open">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold uppercase rounded">Open</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/015</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">NIT for Supply of Laboratory Equipment (Physics Dept)</h3>
+                <p class="text-on-surface-variant mb-4">Sealed quotations are invited from reputed suppliers for providing modern laboratory equipment including Oscilloscopes and Spectrometers for the Physics Department.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                    <span class="text-on-surface-variant">Published: Aug 01, 2026</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-error text-[18px]">warning</span>
+                    <span class="font-medium text-error">Last Date: Aug 20, 2026 (2:00 PM)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <a href="#" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-medium hover:bg-primary-container transition-colors w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">download</span>
+                  Download Document
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tender 2 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="open">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold uppercase rounded">Open</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/014</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Quotation for Desktop Computers and IT Accessories</h3>
+                <p class="text-on-surface-variant mb-4">Procurement of 30 Desktop PCs, 5 Printers, and networking equipment for the newly renovated BCA Computer Lab.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                    <span class="text-on-surface-variant">Published: Jul 28, 2026</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-error text-[18px]">warning</span>
+                    <span class="font-medium text-error">Last Date: Aug 18, 2026 (4:00 PM)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <a href="#" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-medium hover:bg-primary-container transition-colors w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">download</span>
+                  Download Document
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tender 3 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="closed">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 opacity-75">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Closed</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/012</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Renovation of College Canteen Facility</h3>
+                <p class="text-on-surface-variant mb-4">Civil and plumbing work for the upgradation of the main college canteen kitchen and seating area.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                    <span class="text-on-surface-variant">Published: Jul 05, 2026</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">event_busy</span>
+                    <span class="text-on-surface-variant">Last Date: Jul 25, 2026</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <button disabled class="inline-flex items-center gap-2 bg-surface-variant text-on-surface-variant px-6 py-3 rounded-full font-medium cursor-not-allowed w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">lock</span>
+                  Bidding Closed
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tender 4 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="awarded">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 opacity-75">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-primary text-on-primary text-xs font-bold uppercase rounded">Awarded</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/009</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Supply of Library Books (Arts & Science)</h3>
+                <p class="text-on-surface-variant mb-4">Procurement of academic books for the central library for the session 2026-27.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">emoji_events</span>
+                    <span class="font-medium text-primary">Awarded to: ABC Publishers Ltd.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <a href="#" class="inline-flex items-center gap-2 border border-outline-variant text-on-surface px-6 py-3 rounded-full font-medium hover:bg-surface-variant transition-colors w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">visibility</span>
+                  View Award Details
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tender 5 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="open">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold uppercase rounded">Open</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/016</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Printing of College Magazine and Prospectus</h3>
+                <p class="text-on-surface-variant mb-4">Tender for offset printing of 2000 copies of the Annual College Magazine and 3000 copies of the Admission Prospectus.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                    <span class="text-on-surface-variant">Published: Aug 05, 2026</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-error text-[18px]">warning</span>
+                    <span class="font-medium text-error">Last Date: Aug 25, 2026 (1:00 PM)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <a href="#" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-full font-medium hover:bg-primary-container transition-colors w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">download</span>
+                  Download Document
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tender 6 -->
+          <div class="glass-card p-6 md:p-8 rounded-3xl tender-item" data-status="closed">
+            <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 opacity-75">
+              <div class="flex-grow">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="px-2 py-1 bg-surface-variant text-on-surface-variant text-xs font-bold uppercase rounded">Closed</span>
+                  <span class="text-sm text-outline">Ref: MC/TEN/2026/011</span>
+                </div>
+                <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Annual Maintenance Contract for Generators</h3>
+                <p class="text-on-surface-variant mb-4">Comprehensive AMC for two 62.5 KVA silent diesel generators installed in the college campus.</p>
+                <div class="flex flex-wrap gap-6 text-sm">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+                    <span class="text-on-surface-variant">Published: Jun 20, 2026</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-outline text-[18px]">event_busy</span>
+                    <span class="text-on-surface-variant">Last Date: Jul 10, 2026</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <button disabled class="inline-flex items-center gap-2 bg-surface-variant text-on-surface-variant px-6 py-3 rounded-full font-medium cursor-not-allowed w-full md:w-auto justify-center">
+                  <span class="material-symbols-outlined">lock</span>
+                  Bidding Closed
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const items = document.querySelectorAll('.tender-item');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          const status = btn.getAttribute('data-status');
+          
+          items.forEach(item => {
+            if (status === 'all' || item.getAttribute('data-status') === status) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

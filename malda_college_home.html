@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Malda College | Legacy of Excellence since 1944</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#241a00",
+                      "tertiary-fixed": "#e1e3e4",
+                      "primary": "#000613",
+                      "on-surface": "#1a1c1e",
+                      "surface-container-high": "#e9e7eb",
+                      "on-primary-fixed": "#001c3a",
+                      "background": "#faf9fc",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#43474e",
+                      "tertiary-container": "#1c1f20",
+                      "secondary": "#735c00",
+                      "on-primary-fixed-variant": "#2f486a",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#040607",
+                      "surface-dim": "#dbd9dd",
+                      "primary-fixed": "#d4e3ff",
+                      "on-tertiary-fixed": "#191c1d",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary-container": "#848688",
+                      "on-error": "#ffffff",
+                      "surface-container": "#efedf0",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#74777f",
+                      "error-container": "#ffdad6",
+                      "inverse-surface": "#2f3033",
+                      "surface-variant": "#e3e2e5",
+                      "surface-container-highest": "#e3e2e5",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1a1c1e",
+                      "secondary-fixed-dim": "#e9c349",
+                      "inverse-on-surface": "#f2f0f3",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#476083",
+                      "inverse-primary": "#afc8f0",
+                      "secondary-container": "#fed65b",
+                      "surface-container-low": "#f4f3f6",
+                      "primary-fixed-dim": "#afc8f0",
+                      "secondary-fixed": "#ffe088",
+                      "on-primary-container": "#6f88ad",
+                      "tertiary-fixed-dim": "#c5c7c8",
+                      "surface-bright": "#faf9fc",
+                      "on-tertiary-fixed-variant": "#454748",
+                      "surface": "#faf9fc",
+                      "primary-container": "#001f3f",
+                      "on-secondary-container": "#745c00",
+                      "outline-variant": "#c4c6cf"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "section-padding": "120px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 31, 63, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(115, 92, 0, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+            color: theme('colors.on-background');
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 31, 63, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 60px rgba(0, 31, 63, 0.12);
+        }
+        
+        .iso-icon-container {
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .iso-icon {
+            transform: rotateX(20deg) rotateY(-20deg);
+            transition: transform 0.3s ease;
+            filter: drop-shadow(4px 4px 0px rgba(0, 6, 19, 0.1));
+        }
+        
+        .glass-card:hover .iso-icon {
+            transform: rotateX(0deg) rotateY(0deg) scale(1.1);
+        }
+
+        /* Hide scrollbar for carousel but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden relative">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/20 shadow-[0_20px_40px_rgba(0,31,63,0.08)]">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto hidden md:flex">
+<a class="font-display-lg text-headline-md font-bold text-primary flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+                Malda College
+            </a>
+<div class="flex gap-6 items-center">
+<a class="text-secondary border-b-2 border-secondary font-label-caps text-label-caps hover:-translate-y-0.5 active:scale-95 transition-all duration-300" href="#">Home</a>
+<a class="text-on-surface hover:text-secondary font-label-caps text-label-caps hover:-translate-y-0.5 active:scale-95 transition-all duration-300" href="#">About</a>
+<a class="text-on-surface hover:text-secondary font-label-caps text-label-caps hover:-translate-y-0.5 active:scale-95 transition-all duration-300" href="#">Courses</a>
+<a class="text-on-surface hover:text-secondary font-label-caps text-label-caps hover:-translate-y-0.5 active:scale-95 transition-all duration-300" href="#">Admissions</a>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="Search" class="text-on-surface hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                    Student Login
+                </button>
+</div>
+</div>
+<!-- Mobile Nav Header (Nav items moved to bottom bar on mobile) -->
+<div class="flex md:hidden justify-between items-center px-margin-mobile py-4">
+<a class="font-display-lg-mobile text-headline-md font-bold text-primary" href="#">
+                Malda College
+            </a>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps">
+                Login
+            </button>
+</div>
+</nav>
+<!-- Mobile Bottom Nav Bar (Semantic Shell mapping) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_-10px_40px_rgba(0,31,63,0.08)] pb-safe">
+<div class="flex justify-around items-center py-3 px-margin-mobile">
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-label-caps text-[10px]">About</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-caps text-[10px]">Courses</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-label-caps text-[10px]">Admissions</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-[80px] md:pt-[100px] pb-[100px] md:pb-0">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[921px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-gutter py-section-padding">
+<!-- Shader Background -->
+<div class="absolute inset-0 z-0">
+<!-- STITCH_SHADER_START:ANIMATION_3 class="absolute inset-0 w-full h-full opacity-60 mix-blend-multiply" -->
+<div class="absolute inset-0 w-full h-full opacity-60 mix-blend-multiply" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Background color: Deep Navy
+    vec3 color1 = vec3(0.0, 0.12, 0.25); // #001F3F
+    vec3 color2 = vec3(0.0, 0.2, 0.4);   // Lighter navy
+    vec3 gold = vec3(0.83, 0.68, 0.21);  // Gold accent #D4AF37
+    
+    // Animate gradient blobs
+    float noise = sin(uv.x * 3.0 + u_time * 0.5) * cos(uv.y * 2.0 + u_time * 0.3);
+    float pulse = 0.5 + 0.5 * sin(u_time * 0.2);
+    
+    vec3 finalColor = mix(color1, color2, uv.y + noise * 0.2);
+    
+    // Add subtle gold "glow" spots
+    float d = length(uv - vec2(0.8, 0.2 + 0.1 * sin(u_time * 0.4)));
+    float glow = smoothstep(0.4, 0.0, d);
+    finalColor = mix(finalColor, gold, glow * 0.1);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/90 z-10"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto text-center flex flex-col items-center gap-8">
+<div class="glass-card rounded-full px-6 py-2 flex items-center gap-2 mb-4 animate-fade-in-up">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">NAAC B+ Accredited Institution</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl drop-shadow-sm">
+                    Empowering Minds.<br/>
+<span class="text-secondary">Legacy of Excellence since 1944.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Join a premier institution in North Bengal dedicated to holistic education, research, and shaping the leaders of tomorrow.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-caps text-label-caps hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,6,19,0.2)] transition-all duration-300 w-full sm:w-auto">
+                        Apply for Admission 2026
+                    </button>
+<button class="glass-card text-primary border border-primary px-8 py-4 rounded-lg font-label-caps text-label-caps hover:bg-primary/5 transition-all duration-300 w-full sm:w-auto">
+                        Explore Courses
+                    </button>
+</div>
+</div>
+</section>
+<!-- Quick Stats Bar -->
+<section class="relative z-30 -mt-16 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="glass-card rounded-xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="font-display-lg text-headline-md text-primary font-bold">1944</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Founded</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="font-display-lg text-headline-md text-primary font-bold">20+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Departments</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="font-display-lg text-headline-md text-primary font-bold">5000+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">Students</span>
+</div>
+<div class="flex flex-col items-center justify-center text-center px-4">
+<span class="font-display-lg text-headline-md text-secondary font-bold">B+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-2">NAAC Grade</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="w-full rounded-t-xl bg-primary dark:bg-tertiary-container text-on-primary dark:text-on-tertiary-container flat grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter py-section-padding max-w-container-max mx-auto relative z-10 mb-[60px] md:mb-0">
+<div class="flex flex-col gap-6 col-span-1 md:col-span-2">
+<a class="font-display-lg text-headline-md text-secondary-fixed" href="#">
+                Malda College
+            </a>
+<p class="font-body-md text-body-md text-on-primary/80 max-w-md">
+                A heritage institution committed to providing quality education and fostering intellectual growth in North Bengal since 1944.
+            </p>
+<p class="font-label-caps text-label-caps text-on-primary/60 mt-auto">
+                © 1944-2024 Malda College. All Rights Reserved.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-2">Important Links</h4>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">Admissions</a>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">Tenders</a>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">IQAC</a>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">NIRF</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-2">Connect</h4>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-primary/70 dark:text-on-tertiary-container/70 hover:text-secondary-fixed-dim transition-colors duration-200" href="#">Privacy Policy</a>
+<div class="flex gap-4 mt-4">
+<a class="text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

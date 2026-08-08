@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Login | Malda College</title>
+  <meta name="description" content="Login to the Malda College Student Portal or ERP to access academic records, notices, and services."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="crossorigin" href="https://fonts.gstatic.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#000613", "on-primary": "#ffffff",
+        "primary-container": "#001f3f", "on-primary-container": "#6f88ad",
+        "secondary": "#735c00", "on-secondary": "#ffffff",
+        "secondary-container": "#fed65b", "on-secondary-container": "#745c00",
+        "secondary-fixed": "#ffe088", "secondary-fixed-dim": "#e9c349",
+        "on-secondary-fixed": "#241a00", "on-secondary-fixed-variant": "#574500",
+        "background": "#faf9fc", "surface": "#faf9fc",
+        "on-surface": "#1a1c1e", "on-surface-variant": "#43474e",
+        "surface-variant": "#e3e2e5", "surface-dim": "#dbd9dd",
+        "surface-container": "#efedf0", "surface-container-low": "#f4f3f6",
+        "surface-container-high": "#e9e7eb", "surface-container-highest": "#e3e2e5",
+        "surface-container-lowest": "#ffffff",
+        "outline": "#74777f", "outline-variant": "#c4c6cf",
+        "primary-fixed": "#d4e3ff", "primary-fixed-dim": "#afc8f0",
+        "on-primary-fixed": "#001c3a", "on-primary-fixed-variant": "#2f486a",
+        "inverse-primary": "#afc8f0", "inverse-surface": "#2f3033",
+        "tertiary": "#040607", "tertiary-container": "#1c1f20",
+        "tertiary-fixed": "#e1e3e4", "tertiary-fixed-dim": "#c5c7c8",
+        "on-tertiary-fixed": "#191c1d", "on-tertiary-fixed-variant": "#454748",
+        "on-tertiary-container": "#848688",
+        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a",
+        "surface-tint": "#476083"
+      },
+      fontFamily: {
+        "display": ["Playfair Display", "serif"],
+        "body": ["Inter", "sans-serif"]
+      },
+      spacing: {
+        "gutter": "24px", "container-max": "1280px",
+        "section-padding": "120px", "margin-mobile": "20px"
+      }
+    }
+  }
+}
+  </script>
+  <link rel="stylesheet" href="./assets/css/design-tokens.css"/>
+  <link rel="stylesheet" href="./assets/css/components.css"/>
+  <style>
+    @keyframes blob-pulse {
+      0% { transform: scale(1); opacity: 0.15; }
+      50% { transform: scale(1.1); opacity: 0.25; }
+      100% { transform: scale(1); opacity: 0.15; }
+    }
+    .bg-blob { position: absolute; border-radius: 50%; filter: blur(80px); z-index: -1; pointer-events: none; animation: blob-pulse 8s infinite alternate ease-in-out; }
+    .glass-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.60); box-shadow: 0 24px 50px rgba(0,31,63,0.1); border-radius: 1.5rem; }
+  </style>
+</head>
+<body class="antialiased text-on-surface bg-background" data-page="student-login">
+  <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden flex items-center justify-center">
+    <div class="bg-blob" style="width:50vw;height:50vw;background:#000613; margin-left: -20vw; margin-top: -20vh; animation-delay: 0s;"></div>
+    <div class="bg-blob" style="width:40vw;height:40vw;background:#735c00; margin-right: -20vw; margin-bottom: -20vh; animation-delay: -4s;"></div>
+  </div>
+
+  <main class="main-pad pt-[72px] pb-[60px] md:pb-0 min-h-screen flex items-center justify-center px-5 py-12">
+    
+    <div class="glass-card w-full max-w-md p-8 md:p-10 relative overflow-hidden">
+      <!-- Top Accent Line -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary-container to-primary"></div>
+      
+      <!-- Icon & Header -->
+      <div class="flex flex-col items-center mb-8 text-center">
+        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg mb-4">
+          <span class="material-symbols-outlined text-white text-3xl">school</span>
+        </div>
+        <h1 class="font-display text-3xl text-primary font-bold">Student Portal</h1>
+        <p class="text-on-surface-variant text-sm mt-2">Welcome back! Please login to your account.</p>
+      </div>
+      
+      <!-- Form -->
+      <form class="space-y-5">
+        <div>
+          <label for="studentId" class="block text-sm font-semibold text-on-surface mb-1.5">Student ID / Roll Number</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">badge</span>
+            <input type="text" id="studentId" class="w-full bg-surface-container-lowest rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all pl-10 pr-4 py-3 text-on-surface" placeholder="e.g. MC-2023-445" required>
+          </div>
+        </div>
+        
+        <div>
+          <label for="password" class="block text-sm font-semibold text-on-surface mb-1.5">Password</label>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+            <input type="password" id="password" class="w-full bg-surface-container-lowest rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary transition-all pl-10 pr-4 py-3 text-on-surface" placeholder="••••••••" required>
+          </div>
+        </div>
+        
+        <div class="flex items-center justify-between">
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="rounded text-primary focus:ring-primary border-outline-variant bg-surface-container-lowest w-4 h-4">
+            <span class="text-sm text-on-surface-variant font-medium">Remember me</span>
+          </label>
+          <a href="#" class="text-sm font-semibold text-primary hover:text-secondary hover:underline transition-colors">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" class="w-full bg-primary text-on-primary hover:bg-primary-container hover:-translate-y-0.5 active:scale-95 transition-all duration-300 font-semibold py-3.5 px-6 rounded-lg flex items-center justify-center space-x-2 shadow-md">
+          <span>Secure Login</span>
+          <span class="material-symbols-outlined text-sm">login</span>
+        </button>
+      </form>
+      
+      <!-- Divider -->
+      <div class="relative flex items-center py-6">
+        <div class="flex-grow border-t border-outline-variant"></div>
+        <span class="flex-shrink-0 mx-4 text-outline text-sm font-semibold uppercase tracking-wider">OR</span>
+        <div class="flex-grow border-t border-outline-variant"></div>
+      </div>
+      
+      <!-- ERP Login -->
+      <a href="https://mcerp.in/erp/login.aspx" target="_blank" rel="noopener noreferrer" class="w-full bg-surface-container border border-outline-variant text-primary hover:bg-surface-container-high hover:border-primary hover:-translate-y-0.5 active:scale-95 transition-all duration-300 font-semibold py-3.5 px-6 rounded-lg flex items-center justify-center space-x-2 mb-3 group">
+        <span>Login via ERP Portal</span>
+        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">open_in_new</span>
+      </a>
+
+      <!-- Telegram Class Routine -->
+      <a href="https://t.me/Maldacollage_bot" target="_blank" rel="noopener noreferrer"
+         id="telegram-routine-login-btn"
+         class="w-full flex items-center justify-center gap-2.5 mb-6 py-3.5 px-6 rounded-lg border-2 font-bold text-[12px] tracking-[0.08em] uppercase transition-all hover:-translate-y-0.5 active:scale-95"
+         style="background:rgba(254,214,91,0.12);border-color:rgba(254,214,91,0.50);color:#735c00"
+         onmouseover="this.style.background='rgba(254,214,91,0.22)'"
+         onmouseout="this.style.background='rgba(254,214,91,0.12)'"
+         aria-label="Class Routine Telegram Bot">
+        <!-- Telegram icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="12" fill="#735c00"/>
+          <path d="M17.472 6.324l-2.168 10.232c-.162.72-.588.894-1.192.556l-3.3-2.43-1.593 1.534c-.176.175-.324.322-.664.322l.238-3.36 6.12-5.532c.266-.235-.058-.366-.413-.131L6.57 12.57 3.3 11.54c-.717-.224-.73-.717.15-.96l13.848-5.34c.597-.217 1.12.13.174.084z" fill="white"/>
+        </svg>
+        <span class="lang-en">Class Routine (Telegram Bot)</span>
+        <span class="lang-bn">ক্লাস রুটিন (টেলিগ্রাম বট)</span>
+        <span class="material-symbols-outlined text-sm" style="font-size:14px">open_in_new</span>
+      </a>
+
+      <!-- New Reg Link -->
+      <p class="text-center text-sm text-on-surface-variant">
+        Not registered yet? 
+        <a href="admissions.html" class="font-semibold text-secondary hover:text-primary transition-colors underline decoration-2 underline-offset-2">New Student Registration</a>
+      </p>
+      
+    </div>
+  </main>
+  
+  <script>window.MC_ROOT = './';</script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/animations.js"></script>
+</body>
+</html>
