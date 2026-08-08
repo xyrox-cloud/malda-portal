@@ -10,12 +10,12 @@
     "links": [
       {
         "type": "pdf",
-        "url": "#",
+        "url": "assets/docs/sample-notice.pdf",
         "label": "View"
       },
       {
         "type": "link",
-        "url": "#",
+        "url": "assets/docs/sample-notice.pdf",
         "label": "View Details"
       }
     ]
@@ -31,7 +31,7 @@
     "links": [
       {
         "type": "portal",
-        "url": "admissions",
+        "url": "admissions.html",
         "label": "Go to Portal"
       }
     ]
@@ -47,7 +47,7 @@
     "links": [
       {
         "type": "pdf",
-        "url": "#",
+        "url": "assets/docs/sample-notice.pdf",
         "label": "View"
       }
     ]
@@ -63,7 +63,7 @@
     "links": [
       {
         "type": "link",
-        "url": "tenders",
+        "url": "tenders.html",
         "label": "View Tender Details"
       }
     ]
@@ -89,7 +89,7 @@
     "links": [
       {
         "type": "pdf",
-        "url": "#",
+        "url": "assets/docs/sample-notice.pdf",
         "label": "View"
       }
     ]
