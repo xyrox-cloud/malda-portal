@@ -472,10 +472,6 @@
           }, 600);
         });
       });
-        parent.addEventListener('mouseleave', () => {
-          bg.style.transform = 'scale(1.05) perspective(1000px) rotateX(0deg) rotateY(0deg)';
-        });
-      });
 
       // Apply to Stats & Cards
       const cards = document.querySelectorAll('.glass-card, .stat-card, [class*="card"]');
@@ -519,21 +515,46 @@
     }
   }
 
-  function init() {
-    console.log('Cache busted! v1.1 loaded successfully.');
-    injectNav();
-    injectFooter();
-    initHamburger();
-    initNavScroll();
-    initScrollReveal();
-    initSearch();
-    init3DTilt();
+  /* ── Core Header Bootstrapper ── */
+  // The header logic is intentionally decoupled from everything else.
+  function renderHeaderSafe() {
+    try {
+      injectNav();
+      initHamburger();
+      initSearch();
+      console.log('✅ [Malda College] Header rendered successfully (Independent).');
+    } catch (e) {
+      console.error('❌ [Malda College] CRITICAL: Header failed to render!', e);
+    }
+  }
+
+  // Execute Header rendering immediately on DOM load, ignoring other features
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderHeaderSafe);
+  } else {
+    renderHeaderSafe();
+  }
+
+  /* ── Secondary Features Initialization ── */
+  function initOtherFeatures() {
+    console.log('Initializing secondary nav features...');
+    
+    // Each feature runs safely inside its own try-catch
+    const safeRun = (fn, name) => {
+      try { fn(); } 
+      catch (e) { console.error(`⚠️ [Malda College] Non-critical feature '${name}' failed:`, e); }
+    };
+
+    safeRun(injectFooter, 'Footer');
+    safeRun(initNavScroll, 'Nav Scroll');
+    safeRun(initScrollReveal, 'Scroll Reveal');
+    safeRun(init3DTilt, '3D Tilt');
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', initOtherFeatures);
   } else {
-    init();
+    initOtherFeatures();
   }
 
 })();
