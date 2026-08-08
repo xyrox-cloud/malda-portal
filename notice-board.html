@@ -235,10 +235,16 @@ tailwind.config = {
           if (notice.links && notice.links.length > 0) {
             const linksInner = notice.links.map(link => {
               if (link.type === 'pdf') {
+                if (link.url === '#') {
+                  return `<a href="#" onclick="alert('PDF will be uploaded soon'); return false;" class="text-sm font-medium text-outline hover:text-outline flex items-center gap-1 cursor-not-allowed" title="PDF will be uploaded soon"><span class="material-symbols-outlined text-[18px]">visibility_off</span> ${link.label} (Pending)</a>`;
+                }
                 return `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> ${link.label}</a>`;
               } else if (link.type === 'portal') {
                 return `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-primary hover:text-secondary flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">open_in_new</span> ${link.label}</a>`;
               } else {
+                if (link.url === '#') {
+                  return `<a href="#" onclick="alert('Link will be updated soon'); return false;" class="text-sm font-medium text-outline hover:text-outline flex items-center gap-1 cursor-not-allowed" title="Link will be updated soon">${link.label} (Pending)</a>`;
+                }
                 return `<a href="${link.url}" class="text-sm font-medium text-outline hover:text-primary flex items-center gap-1">${link.label}</a>`;
               }
             }).join('\n');

@@ -10,12 +10,12 @@
     "links": [
       {
         "type": "pdf",
-        "url": "assets/docs/sample-notice.pdf",
+        "url": "#",
         "label": "View"
       },
       {
         "type": "link",
-        "url": "assets/docs/sample-notice.pdf",
+        "url": "#",
         "label": "View Details"
       }
     ]
@@ -31,7 +31,7 @@
     "links": [
       {
         "type": "portal",
-        "url": "admissions.html",
+        "url": "https://admission.maldacollege.ac.in/",
         "label": "Go to Portal"
       }
     ]
@@ -47,7 +47,7 @@
     "links": [
       {
         "type": "pdf",
-        "url": "assets/docs/sample-notice.pdf",
+        "url": "#",
         "label": "View"
       }
     ]
@@ -89,7 +89,7 @@
     "links": [
       {
         "type": "pdf",
-        "url": "assets/docs/sample-notice.pdf",
+        "url": "#",
         "label": "View"
       }
     ]
