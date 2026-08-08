@@ -323,25 +323,7 @@
     </div>`;
   }
 
-  /* ── Build mobile bottom bar ── */
-  function buildBottomBar() {
-    const cur = getCurrentPage();
-    const items = [
-      { href: (ROOT || './'), icon: 'home', label: 'Home', labelBn: 'হোম', page: 'index' },
-      { href: ROOT + 'about-us', icon: 'info', label: 'About', labelBn: 'সম্পর্কে', page: 'about-us' },
-      { href: ROOT + 'courses', icon: 'school', label: 'Courses', labelBn: 'কোর্স', page: 'courses' },
-      { href: ROOT + 'admissions', icon: 'history_edu', label: 'Admissions', labelBn: 'ভর্তি', page: 'admissions' },
-    ];
-    return items.map(item => {
-      const active = (cur === item.page || (item.page === 'index' && cur === '')) ? ' active' : '';
-      return `<a href="${item.href}" class="bottom-bar-item${active}">
-        <span class="material-symbols-outlined" style="${active ? 'font-variation-settings:\'FILL\' 1' : ''}">${item.icon}</span>
-        <span class="lang-en">${item.label}</span>
-        <span class="lang-bn">${item.labelBn}</span>
-      </a>`;
-    }).join('');
-  }
-
+  
   /* ── Inject nav ── */
   function injectNav() {
     let el = document.getElementById('site-nav');
@@ -366,18 +348,7 @@
     el.innerHTML = buildFooter();
   }
 
-  /* ── Inject mobile bottom bar ── */
-  function injectBottomBar() {
-    let el = document.getElementById('mobile-bottom-bar');
-    if (!el) {
-      el = document.createElement('nav');
-      el.id = 'mobile-bottom-bar';
-      el.setAttribute('aria-label', 'Quick navigation');
-      document.body.appendChild(el);
-    }
-    el.innerHTML = buildBottomBar();
-  }
-
+  
   /* ── Mobile hamburger ── */
   function initHamburger() {
     document.addEventListener('click', function (e) {
@@ -526,7 +497,6 @@
   function init() {
     injectNav();
     injectFooter();
-    injectBottomBar();
     initHamburger();
     initNavScroll();
     initScrollReveal();
