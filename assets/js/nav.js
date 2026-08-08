@@ -434,8 +434,14 @@
     try {
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+      
+      // Assign btn-3d class to all relevant buttons dynamically
+      document.querySelectorAll('a[class*="bg-secondary"], a[class*="border-outline"], .btn-login, a[class*="bg-primary"], button[class*="bg-"]').forEach(btn => {
+        btn.classList.add('btn-3d');
+      });
+
       // Apply to hero background images
-      const heroBgs = document.querySelectorAll('.hero-section img.absolute, .min-h-[90vh] img.absolute');
+      const heroBgs = document.querySelectorAll('.hero-section canvas, .hero-section .bg-blob, .min-h-[90vh] img.absolute');
       heroBgs.forEach(bg => {
         bg.style.transition = 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
         bg.style.transform = 'scale(1.05) perspective(1000px) rotateX(0deg) rotateY(0deg)';

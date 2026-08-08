@@ -654,7 +654,7 @@ body.glass-mode #site-footer {
 
 
 /* ── 3D Button Effects ── */
-a[class*="btn-"], button[class*="btn-"], .btn-login {
+.btn-3d {
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
   transform: perspective(600px) translateZ(0);
   transform-style: preserve-3d;
@@ -669,7 +669,7 @@ a[class*="btn-"]:active, button[class*="btn-"]:active, .btn-login:active {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  a[class*="btn-"], button[class*="btn-"], .btn-login {
+  .btn-3d {
     transform: none !important;
     box-shadow: none !important;
   }
