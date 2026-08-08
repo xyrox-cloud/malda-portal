@@ -97,108 +97,311 @@
     <section class="py-section-padding px-gutter max-w-container-max mx-auto">
       
       <!-- Toolbar -->
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
-        <div class="relative w-full md:w-96">
-          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-          <input type="text" id="staff-search" data-search-input placeholder="Search by name, designation or dept..." class="w-full pl-12 pr-4 py-3 bg-surface rounded-full border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow glass-card">
-        </div>
-        
-        <div class="flex items-center gap-2 bg-surface-container-high rounded-lg p-1">
-          <button id="view-table" class="p-2 rounded-md bg-surface text-primary shadow-sm flex items-center transition-all" aria-label="Table View">
-            <span class="material-symbols-outlined">table_rows</span>
-          </button>
-          <button id="view-cards" class="p-2 rounded-md text-on-surface-variant hover:text-primary transition-all flex items-center" aria-label="Card View">
-            <span class="material-symbols-outlined">grid_view</span>
-          </button>
-        </div>
+      <div class="mb-8">
+        <p class="text-on-surface-variant text-lg">Below is the list of our dedicated administrative and support staff across various departments.</p>
       </div>
 
       <!-- Data Container -->
-      <div id="staff-container" class="view-table-active">
+      <div id="staff-container">
         
-        <!-- Table View -->
-        <div id="table-view" class="glass-table-wrapper overflow-x-auto">
-          <table class="glass-table min-w-[800px]">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Department</th>
-                <th>Contact</th>
-              </tr>
-            </thead>
-            <tbody id="table-body">
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri Arabinda Mondal</td>
-                <td class="staff-designation">Head Clerk</td>
-                <td class="staff-dept">General Office</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Accountant</td>
-                <td class="staff-dept">Accounts Section</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Smt. <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Cashier</td>
-                <td class="staff-dept">Accounts Section</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Clerk</td>
-                <td class="staff-dept">General Office</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Library Assistant</td>
-                <td class="staff-dept">Central Library</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Library Attendant</td>
-                <td class="staff-dept">Central Library</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Laboratory Attendant</td>
-                <td class="staff-dept">Physics</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Laboratory Attendant</td>
-                <td class="staff-dept">Chemistry</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Peon</td>
-                <td class="staff-dept">General Office</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-              <tr class="staff-row">
-                <td class="font-bold text-on-surface staff-name">Sri <!-- TODO: replace with real data -->Prof. Sunita Rao</td>
-                <td class="staff-designation">Guard</td>
-                <td class="staff-dept">Security</td>
-                <td><a href="mailto:office@maldacollege.ac.in" class="text-primary hover:underline">office@maldacollege.ac.in</a></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">UG OFFICE STAFF (Room 106)</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Bulbul+Mondal&background=001f3f&color=fff&size=128" alt="Bulbul Mondal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Bulbul Mondal</h3>
+              <p class="text-secondary font-medium text-sm">Head Clerk in Charge & Cashier</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Mrinmay+Goswami&background=001f3f&color=fff&size=128" alt="Mrinmay Goswami" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Mrinmay Goswami</h3>
+              <p class="text-secondary font-medium text-sm">Clerk</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Samar+Kr.+Das&background=001f3f&color=fff&size=128" alt="Samar Kr. Das" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Samar Kr. Das</h3>
+              <p class="text-secondary font-medium text-sm">Clerk</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Ashok+Singha&background=001f3f&color=fff&size=128" alt="Ashok Singha" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Ashok Singha</h3>
+              <p class="text-secondary font-medium text-sm">Library Attendant</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Swapan+Ganguly&background=001f3f&color=fff&size=128" alt="Swapan Ganguly" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Swapan Ganguly</h3>
+              <p class="text-secondary font-medium text-sm">Clerk</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Tanay+Bhattyacharyya&background=001f3f&color=fff&size=128" alt="Tanay Bhattyacharyya" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Tanay Bhattyacharyya</h3>
+              <p class="text-secondary font-medium text-sm">Office Staff</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Joshila+Nepali+(Das)&background=001f3f&color=fff&size=128" alt="Joshila Nepali (Das)" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Joshila Nepali (Das)</h3>
+              <p class="text-secondary font-medium text-sm">Office Staff</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Amitabha+Choudhury&background=001f3f&color=fff&size=128" alt="Amitabha Choudhury" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Amitabha Choudhury</h3>
+              <p class="text-secondary font-medium text-sm">Steno-Typist</p>
+            </div>
+
+          </div>
         </div>
 
-        <!-- Cards View (Hidden by default) -->
-        <div id="cards-view" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Populated by JS based on table rows to avoid duplication in HTML for this demo -->
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">UG OFFICE STAFF (Room 110 & 111)</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Shivendu+Tewari&background=001f3f&color=fff&size=128" alt="Shivendu Tewari" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Shivendu Tewari</h3>
+              <p class="text-secondary font-medium text-sm">Office Staff (Commerce issues, Bonafide Certificate)</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">BCA OFFICE STAFF</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Soma+Chaki&background=001f3f&color=fff&size=128" alt="Soma Chaki" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Soma Chaki</h3>
+              <p class="text-secondary font-medium text-sm">Office Assistant</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Mr.+Biprateep+Mandal&background=001f3f&color=fff&size=128" alt="Mr. Biprateep Mandal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Mr. Biprateep Mandal</h3>
+              <p class="text-secondary font-medium text-sm">Technical Assistant</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Mr.+Somnath+Dutta&background=001f3f&color=fff&size=128" alt="Mr. Somnath Dutta" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Mr. Somnath Dutta</h3>
+              <p class="text-secondary font-medium text-sm">Technical Assistant</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Sahadeb+Roy&background=001f3f&color=fff&size=128" alt="Sahadeb Roy" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Sahadeb Roy</h3>
+              <p class="text-secondary font-medium text-sm">Peon, Helper in Lab</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">PG OFFICE STAFF (Room 130 & 136)</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Bani+Das&background=001f3f&color=fff&size=128" alt="Bani Das" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Bani Das</h3>
+              <p class="text-secondary font-medium text-sm">Examination Cell, Room 136</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Pinky+Choudhary&background=001f3f&color=fff&size=128" alt="Pinky Choudhary" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Pinky Choudhary</h3>
+              <p class="text-secondary font-medium text-sm">Examination Cell, Room 136</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Swastika+Bhaduri+Jha&background=001f3f&color=fff&size=128" alt="Swastika Bhaduri Jha" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Swastika Bhaduri Jha</h3>
+              <p class="text-secondary font-medium text-sm">PG Office, Room 130</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Biswajit+Roy&background=001f3f&color=fff&size=128" alt="Biswajit Roy" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Biswajit Roy</h3>
+              <p class="text-secondary font-medium text-sm">Office Beara, Room 130</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">HOSTEL STAFF</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Naren+Mandal&background=001f3f&color=fff&size=128" alt="Naren Mandal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Naren Mandal</h3>
+              <p class="text-secondary font-medium text-sm">Matangini Hajra Hostel</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Basir+Sk&background=001f3f&color=fff&size=128" alt="Basir Sk" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Basir Sk</h3>
+              <p class="text-secondary font-medium text-sm">Jitu Chhatrabas</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Sanjay+Mandal&background=001f3f&color=fff&size=128" alt="Sanjay Mandal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Sanjay Mandal</h3>
+              <p class="text-secondary font-medium text-sm">Sukanta Chhatrabas</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Rasbihari+Ghosh&background=001f3f&color=fff&size=128" alt="Rasbihari Ghosh" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Rasbihari Ghosh</h3>
+              <p class="text-secondary font-medium text-sm">Vidyasagar Chhatrabas</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Manoranjan+Mandal&background=001f3f&color=fff&size=128" alt="Manoranjan Mandal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Manoranjan Mandal</h3>
+              <p class="text-secondary font-medium text-sm">Sukanta Chhatrabas</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Dulal+Choudhury&background=001f3f&color=fff&size=128" alt="Dulal Choudhury" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Dulal Choudhury</h3>
+              <p class="text-secondary font-medium text-sm">Jitu Chhatrabas</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Makhan+Ch+Karmakar&background=001f3f&color=fff&size=128" alt="Makhan Ch Karmakar" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Makhan Ch Karmakar</h3>
+              <p class="text-secondary font-medium text-sm">Matangini Hajra Hostel</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Sripoti+Mandal&background=001f3f&color=fff&size=128" alt="Sripoti Mandal" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Sripoti Mandal</h3>
+              <p class="text-secondary font-medium text-sm">Matangini Hajra Hostel</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">CLEANING STAFF</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Mina+Bansfore&background=001f3f&color=fff&size=128" alt="Mina Bansfore" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Mina Bansfore</h3>
+              <p class="text-secondary font-medium text-sm">Sweeper (Time: 7 AM-2 PM)</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Dinesh+Dome&background=001f3f&color=fff&size=128" alt="Dinesh Dome" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Dinesh Dome</h3>
+              <p class="text-secondary font-medium text-sm">Sweeper (Time: 7 AM-2 PM)</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Amar+Harijan&background=001f3f&color=fff&size=128" alt="Amar Harijan" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Amar Harijan</h3>
+              <p class="text-secondary font-medium text-sm">Sweeper (Time: 7 AM-10 AM & 2 PM-5 PM)</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="font-display text-2xl font-bold text-primary mb-6 pb-2 border-b border-outline-variant/30">GARDENER (Time of work: 9 AM to 4 PM)</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Alil+Sk&background=001f3f&color=fff&size=128" alt="Alil Sk" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Alil Sk</h3>
+              <p class="text-secondary font-medium text-sm">Gardener</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Bishnupada+Sarkar&background=001f3f&color=fff&size=128" alt="Bishnupada Sarkar" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Bishnupada Sarkar</h3>
+              <p class="text-secondary font-medium text-sm">Gardener</p>
+            </div>
+
+            <div class="glass-card p-6 flex flex-col items-center text-center rounded-xl hover:-translate-y-1 transition-transform">
+              <div class="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-surface shadow-sm">
+                <img src="https://ui-avatars.com/api/?name=Madhab+Das&background=001f3f&color=fff&size=128" alt="Madhab Das" class="w-full h-full object-cover">
+              </div>
+              <h3 class="font-bold text-on-surface text-lg leading-tight mb-1">Madhab Das</h3>
+              <p class="text-secondary font-medium text-sm">Gardener</p>
+            </div>
+
+          </div>
         </div>
 
       </div>
-
     </section>
   </main>
 
