@@ -378,15 +378,6 @@
     el.innerHTML = buildBottomBar();
   }
 
-  document.addEventListener('click', function (e) {
-      if (e.target.closest('#lang-toggle-btn')) {
-        document.body.classList.toggle('lang-bn-active');
-        const isBn = document.body.classList.contains('lang-bn-active');
-        localStorage.setItem('mc-lang', isBn ? 'bn' : 'en');
-      }
-    });
-  }
-
   /* ── Mobile hamburger ── */
   function initHamburger() {
     document.addEventListener('click', function (e) {
