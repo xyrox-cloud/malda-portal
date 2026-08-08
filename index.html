@@ -86,7 +86,7 @@
       position: relative;
       min-height: auto; padding-bottom: 200px; padding-top: 100px;
       display: flex;
-      align-items: flex-start; justify-content: center;
+      align-items: center; justify-content: center; flex-direction: column;
       overflow: hidden;
       padding-top: 72px; /* Nav height */
     }
@@ -114,11 +114,11 @@
     <div class="bg-blob" style="bottom:-10%;right:-10%;width:60vw;height:60vw;background:rgba(254,214,91,0.1)"></div>
   </div>
 
-  <main class="main-pad">
+  <main class="main-pad pb-[100px] md:pb-0">
     <!-- HERO -->
     <section class="hero-section">
       <canvas id="hero-canvas"></canvas>
-      <div class="max-w-[1280px] mx-auto px-6 w-full relative z-10 text-center">
+      <div class="max-w-[1280px] mx-auto px-6 w-full relative z-10 text-center flex flex-col items-center justify-center gap-4 py-8 md:py-0">
         <div class="inline-block glass-card px-4 py-2 mb-6 rounded-full">
           <span class="text-sm font-semibold tracking-wider uppercase text-secondary-fixed">NAAC B+ Accredited</span>
         </div>
@@ -130,7 +130,7 @@
           Welcome to Malda College, a premier institution in North Bengal affiliated to the University of Gour Banga, nurturing talents and shaping futures.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="admissions.html" class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-full font-semibold hover:-translate-y-1 transition-transform">Apply for Admission 2026</a>
+          <a href="admissions.html" class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-full font-semibold hover:-translate-y-1 transition-transform whitespace-normal h-auto min-h-[56px] flex items-center justify-center text-center leading-snug break-words z-40 relative">Apply for Admission 2026</a>
           <a href="courses.html" class="border border-outline-variant px-8 py-3 rounded-full font-semibold hover:-translate-y-1 transition-transform">Explore Courses</a>
         </div>
       </div>
@@ -139,23 +139,19 @@
       <div class="relative mt-16 md:absolute md:mt-0 bottom-10 left-0 w-full px-6 pb-8 md:pb-0">
         <div class="max-w-[1000px] mx-auto glass-card p-6 grid grid-cols-2 md:flex md:flex-wrap justify-between items-center text-center gap-6 md:gap-4">
           <div class="flex-1 min-w-[150px]">
-            <div class="text-3xl font-display font-bold text-secondary-fixed">1944</div>
-            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Founded</div>
+            <div class="flex flex-col items-center justify-center gap-1"><div class="font-display font-bold text-secondary-fixed text-[clamp(1.5rem,6vw,2.5rem)] leading-none">1944</div><div class="text-[clamp(11px,3.5vw,14px)] uppercase tracking-wide opacity-90 whitespace-nowrap leading-tight">Founded</div></div>
           </div>
           <div class="w-px h-12 bg-white/20 hidden md:block"></div>
           <div class="flex-1 min-w-[150px]">
-            <div class="text-3xl font-display font-bold text-secondary-fixed">20+</div>
-            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Departments</div>
+            <div class="flex flex-col items-center justify-center gap-1"><div class="font-display font-bold text-secondary-fixed text-[clamp(1.5rem,6vw,2.5rem)] leading-none">20+</div><div class="text-[clamp(11px,3.5vw,14px)] uppercase tracking-wide opacity-90 whitespace-nowrap leading-tight">Departments</div></div>
           </div>
           <div class="w-px h-12 bg-white/20 hidden md:block"></div>
           <div class="flex-1 min-w-[150px]">
-            <div class="text-3xl font-display font-bold text-secondary-fixed">5000+</div>
-            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">Students</div>
+            <div class="flex flex-col items-center justify-center gap-1"><div class="font-display font-bold text-secondary-fixed text-[clamp(1.5rem,6vw,2.5rem)] leading-none">5000+</div><div class="text-[clamp(11px,3.5vw,14px)] uppercase tracking-wide opacity-90 whitespace-nowrap leading-tight">Students</div></div>
           </div>
           <div class="w-px h-12 bg-white/20 hidden md:block"></div>
           <div class="flex-1 min-w-[150px]">
-            <div class="text-3xl font-display font-bold text-secondary-fixed">B+</div>
-            <div class="text-sm uppercase tracking-wide opacity-80 mt-1">NAAC Grade</div>
+            <div class="flex flex-col items-center justify-center gap-1"><div class="font-display font-bold text-secondary-fixed text-[clamp(1.5rem,6vw,2.5rem)] leading-none">B+</div><div class="text-[clamp(11px,3.5vw,14px)] uppercase tracking-wide opacity-90 whitespace-nowrap leading-tight">NAAC Grade</div></div>
           </div>
         </div>
       </div>
