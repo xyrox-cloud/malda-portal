@@ -232,10 +232,6 @@
 
       <!-- Right Actions -->
       <div style="display:flex;align-items:center;gap:12px;flex-shrink:0">
-        <button class="lang-toggle" id="lang-toggle-btn" aria-label="Toggle language" title="Toggle English / Bengali">
-          <span class="lang-en">বাং</span>
-          <span class="lang-bn">EN</span>
-        </button>
         <a href="https://mcerp.in/erp/login.aspx" class="btn-login">
           <span class="lang-en">Student Login</span>
           <span class="lang-bn">শিক্ষার্থী লগইন</span>
@@ -382,13 +378,7 @@
     el.innerHTML = buildBottomBar();
   }
 
-  /* ── Language toggle ── */
-  function initLangToggle() {
-    const stored = localStorage.getItem('mc-lang');
-    if (stored === 'bn') {
-      document.body.classList.add('lang-bn-active');
-    }
-    document.addEventListener('click', function (e) {
+  document.addEventListener('click', function (e) {
       if (e.target.closest('#lang-toggle-btn')) {
         document.body.classList.toggle('lang-bn-active');
         const isBn = document.body.classList.contains('lang-bn-active');
@@ -480,7 +470,6 @@
     injectNav();
     injectFooter();
     injectBottomBar();
-    initLangToggle();
     initHamburger();
     initNavScroll();
     initScrollReveal();
