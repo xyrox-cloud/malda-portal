@@ -501,6 +501,7 @@
   }
 
   function init() {
+    console.log('Cache busted! v1.1 loaded successfully.');
     injectNav();
     injectFooter();
     initHamburger();
