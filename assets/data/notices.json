@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "category": "examination",
+    "tags": ["Urgent"],
+    "date": "Aug 15",
+    "year": "2026",
+    "title": "UG Semester IV Final Examination Schedule",
+    "description": "Detailed routine for BA/BSc/BCom Honours and General Semester IV examinations starting from September 10, 2026.",
+    "links": [
+      {
+        "type": "pdf",
+        "url": "#",
+        "label": "View"
+      },
+      {
+        "type": "link",
+        "url": "#",
+        "label": "View Details"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "admissions",
+    "tags": ["Important"],
+    "date": "Aug 12",
+    "year": "2026",
+    "title": "Publication of 1st Merit List for UG Admissions",
+    "description": "The first merit list for BA/BSc/BCom Honours will be published on August 14, 2026, at 4:00 PM.",
+    "links": [
+      {
+        "type": "portal",
+        "url": "admissions",
+        "label": "Go to Portal"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "academic",
+    "tags": [],
+    "date": "Aug 05",
+    "year": "2026",
+    "title": "Commencement of Semester III Classes",
+    "description": "Regular classes for all UG Semester III students will commence from August 10, 2026. Students are advised to check the departmental notice boards for routines.",
+    "links": [
+      {
+        "type": "pdf",
+        "url": "#",
+        "label": "View"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "tenders",
+    "tags": [],
+    "date": "Aug 01",
+    "year": "2026",
+    "title": "NIT for Supply of Laboratory Equipment (Physics Dept)",
+    "description": "Sealed quotations are invited from reputed suppliers for providing laboratory equipment for the Physics Department.",
+    "links": [
+      {
+        "type": "link",
+        "url": "tenders",
+        "label": "View Tender Details"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "general",
+    "tags": [],
+    "date": "Jul 28",
+    "year": "2026",
+    "title": "Observance of Independence Day 2026",
+    "description": "Flag hoisting ceremony will be held on August 15 at 8:30 AM in the college campus. All staff and students are requested to attend.",
+    "links": []
+  },
+  {
+    "id": 6,
+    "category": "examination",
+    "tags": [],
+    "date": "Jul 20",
+    "year": "2026",
+    "title": "Form Fill-up for Semester IV Exams",
+    "description": "Online form fill-up portal for Semester IV will remain open from July 22 to July 30, 2026.",
+    "links": [
+      {
+        "type": "pdf",
+        "url": "#",
+        "label": "View"
+      }
+    ]
+  }
+]

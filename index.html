@@ -159,42 +159,18 @@
 
     <!-- LATEST NOTICES -->
     <section class="py-section-padding px-6 max-w-[1280px] mx-auto">
-      <div class="mb-12">
-        <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Stay Updated</span>
-        <h2 class="font-display text-3xl font-semibold">Latest Notices</h2>
-        <p class="text-on-primary/70 mt-2">Important announcements and updates for students and staff.</p>
+      <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-secondary-fixed text-sm font-semibold tracking-wider uppercase mb-2 block">Stay Updated</span>
+          <h2 class="font-display text-3xl font-semibold">Latest Notices</h2>
+          <p class="text-on-primary/70 mt-2">Important announcements and updates for students and staff.</p>
+        </div>
+        <a href="notice-board" class="inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors whitespace-nowrap border border-white/20 font-medium text-sm md:text-base">
+          View All Notices <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+        </a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Gallery Item 1 -->
-        <div class="reveal glass-card h-64 bg-surface-container rounded-2xl overflow-hidden relative group">
-          <div class="absolute inset-0 bg-surface flex flex-col items-center justify-center -z-10">
-            <span class="text-on-surface-variant font-medium opacity-60 px-4 text-center">Annual Sports Day</span>
-          </div>
-          <img src="https://i.ibb.co/gbPWcqJy/FB-IMG-1786217499784.jpg" alt="Annual Sports Day" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 bg-surface" onerror="this.style.display='none'">
-          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-            <h4 class="font-semibold text-white drop-shadow-md">Annual Sports Day</h4>
-          </div>
-        </div>
-        <!-- Gallery Item 2 -->
-        <div class="reveal glass-card h-64 bg-surface-container rounded-2xl overflow-hidden relative group">
-          <div class="absolute inset-0 bg-surface flex flex-col items-center justify-center -z-10">
-            <span class="text-on-surface-variant font-medium opacity-60 px-4 text-center">Science Exhibition</span>
-          </div>
-          <img src="https://i.ibb.co/XrBHTBx9/foundation-banner.jpg" alt="Science Exhibition" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 bg-surface" onerror="this.style.display='none'">
-          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-            <h4 class="font-semibold text-white drop-shadow-md">Science Exhibition</h4>
-          </div>
-        </div>
-        <!-- Gallery Item 3 -->
-        <div class="reveal glass-card h-64 bg-surface-container rounded-2xl overflow-hidden relative group">
-          <div class="absolute inset-0 bg-surface flex flex-col items-center justify-center -z-10">
-            <span class="text-on-surface-variant font-medium opacity-60 px-4 text-center">Cultural Fest</span>
-          </div>
-          <img src="https://i.ibb.co/Nz4PKh4/IMG-20240610-WA0003.jpg" alt="Cultural Fest" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 bg-surface" onerror="this.style.display='none'">
-          <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-            <h4 class="font-semibold text-white drop-shadow-md">Cultural Fest</h4>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="latest-notices-container">
+        <!-- Javascript will inject cards here -->
       </div>
     </section>
 
@@ -326,7 +302,7 @@
         </div>
         <a href="#" class="text-secondary-fixed font-semibold hover:underline hidden sm:block">View All</a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- fixed extra div -->
         <!-- Gallery Item 1 -->
         <div class="reveal glass-card h-64 bg-surface-container rounded-2xl overflow-hidden relative group">
           <div class="absolute inset-0 bg-surface flex flex-col items-center justify-center -z-10">
@@ -365,6 +341,67 @@
   <script>window.MC_ROOT = './';</script>
   <script src="./assets/js/nav.js?v=1.1"></script>
   <script src="./assets/js/animations.js?v=1.1"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const noticesContainer = document.getElementById('latest-notices-container');
+      if (noticesContainer) {
+        fetch('./assets/data/notices.json')
+          .then(res => res.json())
+          .then(data => {
+            // Get latest 3 notices
+            const latestNotices = data.slice(0, 3);
+            let html = '';
+            
+            latestNotices.forEach(notice => {
+              let tagsHtml = `<span class="border border-white/20 text-xs px-2 py-1 rounded text-white/80 uppercase">${notice.category}</span>`;
+              if (notice.tags) {
+                notice.tags.forEach(tag => {
+                  if (tag.toLowerCase() === 'urgent') {
+                    tagsHtml += `<span class="border border-red-500/50 bg-red-500/20 text-red-200 text-xs px-2 py-1 rounded uppercase">${tag}</span>`;
+                  } else if (tag.toLowerCase() === 'important') {
+                    tagsHtml += `<span class="border border-[#ffe088]/30 bg-[#ffe088]/10 text-[#ffe088] text-xs px-2 py-1 rounded uppercase">${tag}</span>`;
+                  } else {
+                    tagsHtml += `<span class="border border-white/20 text-xs px-2 py-1 rounded text-white/80 uppercase">${tag}</span>`;
+                  }
+                });
+              }
+
+              let linksHtml = '';
+              if (notice.links && notice.links.length > 0) {
+                const linksInner = notice.links.map(link => {
+                  if (link.type === 'pdf') {
+                    return `<a href="${link.url}" target="_blank" class="text-sm font-medium text-secondary-fixed hover:text-white flex items-center gap-1 transition-colors"><span class="material-symbols-outlined text-[18px]">visibility</span> ${link.label}</a>`;
+                  } else if (link.type === 'portal') {
+                    return `<a href="${link.url}" target="_blank" class="text-sm font-medium text-secondary-fixed hover:text-white flex items-center gap-1 transition-colors"><span class="material-symbols-outlined text-[18px]">open_in_new</span> ${link.label}</a>`;
+                  } else {
+                    return `<a href="${link.url}" class="text-sm font-medium text-white/70 hover:text-white flex items-center gap-1 transition-colors">${link.label}</a>`;
+                  }
+                }).join('\n');
+                linksHtml = `<div class="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10 mt-auto">${linksInner}</div>`;
+              }
+
+              html += `
+                <div class="reveal glass-card p-6 flex flex-col h-full group">
+                  <div class="flex flex-wrap items-center gap-2 mb-4">
+                    ${tagsHtml}
+                    <span class="ml-auto text-xs text-white/60">${notice.date}, ${notice.year}</span>
+                  </div>
+                  <h3 class="font-display text-xl font-semibold mb-3 group-hover:text-secondary-fixed transition-colors">${notice.title}</h3>
+                  <p class="text-sm text-white/70 mb-4 line-clamp-3">${notice.description}</p>
+                  ${linksHtml}
+                </div>
+              `;
+            });
+            
+            noticesContainer.innerHTML = html;
+          })
+          .catch(err => {
+            console.error("Error loading notices:", err);
+            noticesContainer.innerHTML = '<p class="text-white/60">Failed to load notices.</p>';
+          });
+      }
+    });
+  </script>
   <script>
     if(window.MC && window.MC.initHeroShader) {
       window.MC.initHeroShader('hero-canvas');
