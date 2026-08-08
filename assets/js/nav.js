@@ -16,7 +16,7 @@
 
   /* ── Navigation data ── */
   const NAV = [
-    { label: 'Home', labelBn: 'হোম', href: ROOT + 'index.html', page: 'home' },
+    { label: 'Home', labelBn: 'হোম', href: (ROOT || './'), page: 'home' },
     { label: 'About Us', labelBn: 'আমাদের সম্পর্কে', href: ROOT + 'about-us.html', page: 'about-us' },
     {
       label: 'Administration', labelBn: 'প্রশাসন', page: 'admin',
@@ -219,7 +219,7 @@
     return `
     <div class="nav-inner">
       <!-- Logo -->
-      <a href="${ROOT}index.html" class="nav-logo" aria-label="Malda College Home">
+      <a href="${ROOT || './'}" class="nav-logo" aria-label="Malda College Home">
         <img src="https://i.ibb.co/ksHdWc7h/mc-logo-1.png" alt="Malda College" style="height:40px; width:auto; object-fit:contain; margin-right:8px;" class="mc-logo">
         <span>
           <span class="lang-en">Malda College</span>
@@ -270,7 +270,7 @@
     return `
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="${ROOT}index.html" class="footer-logo">
+        <a href="${ROOT || './'}" class="footer-logo">
           <span class="lang-en">Malda College</span>
           <span class="lang-bn">মালদা কলেজ</span>
         </a>
@@ -327,7 +327,7 @@
   function buildBottomBar() {
     const cur = getCurrentPage();
     const items = [
-      { href: ROOT + 'index.html', icon: 'home', label: 'Home', labelBn: 'হোম', page: 'index' },
+      { href: (ROOT || './'), icon: 'home', label: 'Home', labelBn: 'হোম', page: 'index' },
       { href: ROOT + 'about-us.html', icon: 'info', label: 'About', labelBn: 'সম্পর্কে', page: 'about-us' },
       { href: ROOT + 'courses.html', icon: 'school', label: 'Courses', labelBn: 'কোর্স', page: 'courses' },
       { href: ROOT + 'admissions.html', icon: 'history_edu', label: 'Admissions', labelBn: 'ভর্তি', page: 'admissions' },
