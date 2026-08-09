@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="crossorigin" href="https://fonts.gstatic.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
@@ -95,6 +96,41 @@
       from { opacity: 0; transform: translateY(5px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    /* Language Toggle Styles */
+    .lang-bn-block { display: none; font-family: 'Noto Sans Bengali', sans-serif; }
+    body.lang-bn-active .lang-en-block { display: none; }
+    body.lang-bn-active .lang-bn-block { display: block !important; }
+    .lang-bn { font-family: 'Noto Sans Bengali', sans-serif; }
+    
+    .lang-toggle {
+      display: inline-flex;
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 2px;
+      margin-bottom: 20px;
+    }
+    .glass-mode .lang-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .lang-btn {
+      padding: 4px 16px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    .glass-mode .lang-btn {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .lang-btn.active {
+      background: #fed65b;
+      color: #745c00 !important;
+    }
   </style>
 </head>
 <body class="antialiased bg-background text-on-surface" data-page="donation">
@@ -106,12 +142,21 @@
   <main class="main-pad">
     <section class="page-hero">
       <div class="max-w-container-max mx-auto relative z-10">
-        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">Support</p>
-        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">Support My Education</h1>
+        <p class="text-secondary-fixed text-sm font-bold tracking-widest uppercase mb-4">
+          <span class="lang-en">Support</span><span class="lang-bn">সহায়তা</span>
+        </p>
+        <h1 class="font-display text-4xl md:text-6xl font-bold mb-6">
+          <span class="lang-en">Support My Education</span>
+          <span class="lang-bn-block">আমার শিক্ষায় সহায়তা করুন</span>
+        </h1>
         <div class="flex items-center justify-center gap-2 text-sm text-on-primary-container">
-          <a href="./" class="hover:text-secondary-fixed transition-colors">Home</a>
+          <a href="./" class="hover:text-secondary-fixed transition-colors">
+            <span class="lang-en">Home</span><span class="lang-bn">হোম</span>
+          </a>
           <span class="material-symbols-outlined text-sm">chevron_right</span>
-          <span class="text-on-primary">Donation</span>
+          <span class="text-on-primary">
+            <span class="lang-en">Donation</span><span class="lang-bn">অনুদান</span>
+          </span>
         </div>
       </div>
     </section>
@@ -119,17 +164,40 @@
     <section class="py-section-padding px-gutter max-w-container-max mx-auto">
       <div class="max-w-3xl mx-auto">
         <div class="glass-card p-8 md:p-12 rounded-3xl">
-          <div class="mb-10">
-            <h2 class="font-display text-3xl font-bold text-on-surface mb-6">A Personal Appeal</h2>
-            <p class="text-on-surface-variant font-body text-lg mb-4">
-              Hi there, I'm currently studying BCA (Bachelor of Computer Applications). As a student in this field, having a reliable laptop is absolutely essential for my coursework, coding assignments, and building projects.
-            </p>
-            <p class="text-on-surface-variant font-body text-lg mb-4">
-              Unfortunately, I don't currently have the funds to afford a machine that can handle modern development tools. I'm reaching out to ask for your support to help me buy a laptop so I can continue my education and build my skills.
-            </p>
-            <p class="text-on-surface-variant font-body text-lg">
-              This isn't a registered charity—just a direct appeal from a student trying to learn and grow. Any contribution, big or small, will make a massive difference and bring me one step closer to my goal. Thank you so much for reading and considering!
-            </p>
+          
+          <div class="text-center">
+            <div class="lang-toggle">
+              <div class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</div>
+              <div class="lang-btn" id="btn-bn" onclick="setLang('bn')" style="font-family: 'Noto Sans Bengali', sans-serif;">বাং</div>
+            </div>
+          </div>
+
+          <div class="mb-10 text-on-surface-variant font-body text-lg">
+            <div class="lang-en-block">
+              <h2 class="font-display text-3xl font-bold text-on-surface mb-6">Supporting My Education Journey</h2>
+              <p class="mb-4">
+                I'm currently pursuing a Bachelor of Computer Applications (BCA) degree, and a reliable laptop has become essential for my coursework, programming assignments, and personal projects. Right now, I don't have access to one of my own.
+              </p>
+              <p class="mb-4">
+                If you're able to contribute, even a small amount would make a meaningful difference and bring me closer to affording a laptop. Every contribution, big or small, is genuinely appreciated.
+              </p>
+              <p>
+                Thank you for taking the time to read this and for any support you're able to offer.
+              </p>
+            </div>
+            
+            <div class="lang-bn-block">
+              <h2 class="font-display text-3xl font-bold text-on-surface mb-6">আমার শিক্ষাযাত্রায় সহযোগিতা</h2>
+              <p class="mb-4">
+                বর্তমানে আমি ব্যাচেলর অফ কম্পিউটার অ্যাপ্লিকেশনস (BCA) ডিগ্রি অধ্যয়ন করছি, এবং আমার পড়াশোনা, প্রোগ্রামিং অ্যাসাইনমেন্ট ও ব্যক্তিগত প্রজেক্টের জন্য একটি নির্ভরযোগ্য ল্যাপটপ অত্যন্ত প্রয়োজনীয় হয়ে উঠেছে। বর্তমানে আমার নিজের কোনো ল্যাপটপ নেই।
+              </p>
+              <p class="mb-4">
+                আপনি যদি সামর্থ্য অনুযায়ী কিছু অনুদান দিতে পারেন, তা যত ছোটই হোক না কেন, আমার জন্য অনেক বড় সহায়তা হবে এবং একটি ল্যাপটপ কেনার স্বপ্নের কাছাকাছি পৌঁছাতে সাহায্য করবে। আপনার প্রতিটি অবদান আন্তরিকভাবে মূল্যবান।
+              </p>
+              <p>
+                এই বার্তাটি পড়ার জন্য এবং আপনার যেকোনো সহযোগিতার জন্য ধন্যবাদ।
+              </p>
+            </div>
           </div>
 
           <div class="border-t border-outline-variant pt-10">
@@ -255,6 +323,18 @@
       } else {
         addressEl.innerText = evmAddress;
         warningEl.style.display = 'block';
+      }
+    }
+    
+    function setLang(lang) {
+      if (lang === 'bn') {
+        document.body.classList.add('lang-bn-active');
+        document.getElementById('btn-bn').classList.add('active');
+        document.getElementById('btn-en').classList.remove('active');
+      } else {
+        document.body.classList.remove('lang-bn-active');
+        document.getElementById('btn-en').classList.add('active');
+        document.getElementById('btn-bn').classList.remove('active');
       }
     }
   </script>
