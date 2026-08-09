@@ -98,6 +98,7 @@
     { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board', page: 'notice-board' },
     { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni', page: 'alumni' },
     { label: 'Admissions', labelBn: 'ভর্তি', href: ROOT + 'admissions', page: 'admissions' },
+    { label: 'Donation', labelBn: 'অনুদান', href: ROOT + 'donation', page: 'donation' },
     { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact', page: 'contact' },
   ];
 
@@ -110,6 +111,7 @@
       { label: 'Tenders', labelBn: 'টেন্ডার', href: ROOT + 'tenders' },
       { label: 'NIRF', labelBn: 'এনআইআরএফ', href: ROOT + 'nirf' },
       { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni' },
+      { label: 'Donation', labelBn: 'অনুদান', href: ROOT + 'donation' },
     ],
     connect: [
       { label: '📅 Class Routine (Telegram Bot)', labelBn: '📅 ক্লাস রুটিন (টেলিগ্রাম বট)', href: 'https://t.me/Maldacollage_bot', external: true },
