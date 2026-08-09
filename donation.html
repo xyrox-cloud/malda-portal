@@ -149,7 +149,7 @@
                 </div>
                 <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-2">UPI ID</p>
                 <div class="flex items-center justify-center gap-2 bg-surface p-3 rounded-lg border border-outline-variant">
-                  <span id="upi-id" class="font-medium truncate">YOUR_UPI_ID_HERE@okbank</span>
+                  <span id="upi-id" class="font-medium truncate">iyyy4d@ptaxis</span>
                   <button onclick="copyToClipboard('upi-id', this)" class="text-primary hover:text-primary-container p-2 rounded-md hover:bg-surface-variant transition-colors flex items-center" aria-label="Copy UPI ID">
                     <span class="material-symbols-outlined text-sm">content_copy</span>
                   </button>
@@ -163,11 +163,25 @@
                 <div class="w-16 h-16 mx-auto bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-4">
                   <span class="material-symbols-outlined text-3xl">currency_bitcoin</span>
                 </div>
-                <!-- specify network: e.g. USDT BEP20 -->
-                <p class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-2">Wallet Address (Network: XXXX)</p>
+                
+                <div class="mb-4 text-left">
+                  <label for="crypto-network" class="block text-sm font-semibold text-on-surface-variant mb-1">Select Network/Coin</label>
+                  <select id="crypto-network" class="w-full bg-surface border border-outline-variant rounded-md py-2 px-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" onchange="updateCryptoNetwork()">
+                    <option value="usdt">USDT (BEP20)</option>
+                    <option value="pol">POL</option>
+                    <option value="eth">ETH</option>
+                    <option value="ltc">Litecoin (LTC)</option>
+                  </select>
+                </div>
+
+                <p id="crypto-warning" class="text-xs text-error font-medium mb-3 text-left leading-snug">
+                  Only send USDT on BEP20, POL, or ETH to this address — sending on the wrong network may result in permanent loss of funds.
+                </p>
+
+                <p id="crypto-label" class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-2">Wallet Address</p>
                 <div class="flex items-center justify-center gap-2 bg-surface p-3 rounded-lg border border-outline-variant">
-                  <span id="crypto-address" class="font-medium text-sm truncate max-w-[200px]">YOUR_WALLET_ADDRESS_HERE</span>
-                  <button onclick="copyToClipboard('crypto-address', this)" class="text-primary hover:text-primary-container p-2 rounded-md hover:bg-surface-variant transition-colors flex items-center" aria-label="Copy Crypto Address">
+                  <span id="crypto-address" class="font-medium text-sm truncate max-w-[200px]">0xaE2C19a119d212799D60c3011294316dfa69d239</span>
+                  <button onclick="copyToClipboard('crypto-address', this)" class="text-primary hover:text-primary-container p-2 rounded-md hover:bg-surface-variant transition-colors flex items-center shrink-0" aria-label="Copy Crypto Address">
                     <span class="material-symbols-outlined text-sm">content_copy</span>
                   </button>
                 </div>
@@ -225,6 +239,23 @@
       }).catch(err => {
         console.error('Failed to copy: ', err);
       });
+    }
+
+    function updateCryptoNetwork() {
+      const network = document.getElementById('crypto-network').value;
+      const addressEl = document.getElementById('crypto-address');
+      const warningEl = document.getElementById('crypto-warning');
+      
+      const evmAddress = '0xaE2C19a119d212799D60c3011294316dfa69d239';
+      const ltcAddress = 'ltc1qjuk66rlld22j7rsqjjr8edejkgjx7395s9ct35';
+      
+      if (network === 'ltc') {
+        addressEl.innerText = ltcAddress;
+        warningEl.style.display = 'none';
+      } else {
+        addressEl.innerText = evmAddress;
+        warningEl.style.display = 'block';
+      }
     }
   </script>
 </body>
