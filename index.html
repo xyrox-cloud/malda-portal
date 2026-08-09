@@ -118,7 +118,22 @@
     <!-- HERO -->
     <section class="hero-section">
       <canvas id="hero-canvas"></canvas>
-      <div class="max-w-[1280px] mx-auto px-6 w-full relative z-10 text-center flex flex-col items-center justify-center gap-4 py-8 md:py-0">
+
+      <!-- DONATION CTA BANNER -->
+      <div class="absolute top-[80px] md:top-[90px] left-1/2 -translate-x-1/2 w-[92%] max-w-2xl z-40">
+        <div class="bg-secondary-container/90 backdrop-blur-md border border-secondary-fixed/50 rounded-2xl md:rounded-full px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-lg shadow-secondary/20 transition-transform hover:-translate-y-1">
+          <span class="text-on-secondary-container font-semibold text-sm md:text-base text-center sm:text-left">
+            <span class="lang-en">Help fund my BCA laptop 💻</span>
+            <span class="lang-bn">আমার বিসিএ ল্যাপটপের জন্য অর্থায়নে সহায়তা করুন 💻</span>
+          </span>
+          <a href="donation" class="bg-primary text-on-primary px-5 py-2 rounded-full text-sm font-bold hover:bg-primary-container transition-colors whitespace-nowrap">
+            <span class="lang-en">Donate Now</span>
+            <span class="lang-bn">দান করুন</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="max-w-[1280px] mx-auto px-6 w-full relative z-10 text-center flex flex-col items-center justify-center gap-4 py-8 md:py-0 mt-24 sm:mt-16">
         <div class="inline-block glass-card px-4 py-2 mb-6 rounded-full">
           <span class="text-sm font-semibold tracking-wider uppercase text-secondary-fixed">NAAC B+ Accredited</span>
         </div>
