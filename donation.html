@@ -233,17 +233,20 @@
                 </div>
                 
                 <div class="mb-4 text-left">
-                  <label for="crypto-network" class="block text-sm font-semibold text-on-surface-variant mb-1">Select Network/Coin</label>
+                  <label for="crypto-network" class="block text-sm font-semibold text-on-surface-variant mb-1">Select Coin / Network</label>
                   <select id="crypto-network" class="w-full bg-surface border border-outline-variant rounded-md py-2 px-3 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow" onchange="updateCryptoNetwork()">
-                    <option value="usdt">USDT (BEP20)</option>
-                    <option value="pol">POL</option>
-                    <option value="eth">ETH</option>
+                    <option value="usdt-bep20">USDT (BEP20) — Binance Smart Chain</option>
+                    <option value="usdt-polygon">USDT (Polygon)</option>
+                    <option value="usdt-erc20">USDT (Ethereum / ERC20)</option>
                     <option value="ltc">Litecoin (LTC)</option>
                   </select>
                 </div>
 
-                <p id="crypto-warning" class="text-xs text-error font-medium mb-3 text-left leading-snug">
-                  Only send USDT on BEP20, POL, or ETH to this address — sending on the wrong network may result in permanent loss of funds.
+                <p id="crypto-warning-evm" class="text-xs text-error font-medium mb-3 text-left leading-snug">
+                  ⚠️ Only send <strong>USDT</strong> on BEP20, Polygon, or Ethereum to this address — sending any other coin or using the wrong network may result in <strong>permanent loss of funds</strong>.
+                </p>
+                <p id="crypto-warning-ltc" class="text-xs text-error font-medium mb-3 text-left leading-snug" style="display:none">
+                  ⚠️ This address only accepts <strong>Litecoin (LTC)</strong>. Do not send any other coin to this address — only native LTC on the Litecoin network is accepted here.
                 </p>
 
                 <p id="crypto-label" class="text-sm font-semibold uppercase tracking-wider text-on-surface-variant mb-2">Wallet Address</p>
@@ -312,17 +315,20 @@
     function updateCryptoNetwork() {
       const network = document.getElementById('crypto-network').value;
       const addressEl = document.getElementById('crypto-address');
-      const warningEl = document.getElementById('crypto-warning');
+      const evmWarningEl = document.getElementById('crypto-warning-evm');
+      const ltcWarningEl = document.getElementById('crypto-warning-ltc');
       
       const evmAddress = '0xaE2C19a119d212799D60c3011294316dfa69d239';
       const ltcAddress = 'ltc1qjuk66rlld22j7rsqjjr8edejkgjx7395s9ct35';
       
       if (network === 'ltc') {
         addressEl.innerText = ltcAddress;
-        warningEl.style.display = 'none';
+        evmWarningEl.style.display = 'none';
+        ltcWarningEl.style.display = 'block';
       } else {
         addressEl.innerText = evmAddress;
-        warningEl.style.display = 'block';
+        evmWarningEl.style.display = 'block';
+        ltcWarningEl.style.display = 'none';
       }
     }
     
