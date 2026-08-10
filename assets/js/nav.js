@@ -94,11 +94,18 @@
         }
       ]
     },
-    { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac', page: 'naac-iqac' },
     { label: 'Notice Board', labelBn: 'নোটিশ বোর্ড', href: ROOT + 'notice-board', page: 'notice-board' },
-    { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni', page: 'alumni' },
     { label: 'Admissions', labelBn: 'ভর্তি', href: ROOT + 'admissions', page: 'admissions' },
-    { label: 'Donation', labelBn: 'অনুদান', href: ROOT + 'donation', page: 'donation' },
+    {
+      label: 'More', labelBn: 'আরও', page: 'more',
+      children: [
+        { label: 'NAAC / IQAC', labelBn: 'ন্যাক / আইকিউএসি', href: ROOT + 'naac-iqac', page: 'naac-iqac' },
+        { label: 'Tenders', labelBn: 'টেন্ডার', href: ROOT + 'tenders', page: 'tenders' },
+        { label: 'NIRF', labelBn: 'এনআইআরএফ', href: ROOT + 'nirf', page: 'nirf' },
+        { label: 'Alumni', labelBn: 'প্রাক্তনী', href: ROOT + 'alumni', page: 'alumni' },
+        { label: 'Donation', labelBn: 'অনুদান', href: ROOT + 'donation', page: 'donation' },
+      ]
+    },
     { label: 'Contact Us', labelBn: 'যোগাযোগ', href: ROOT + 'contact', page: 'contact' },
   ];
 
@@ -190,21 +197,28 @@
     return html;
   }
 
-  /* ── Build mobile nav ── */
+  /* ── Build mobile nav with Accordion ── */
   function buildMobileNav(currentPage) {
     function renderItems(items, level) {
       level = level || 0;
       let html = '';
       items.forEach(item => {
         if (item.children) {
-          html += `<div class="mobile-section-title">
-            <span class="lang-en">${item.label}</span>
-            <span class="lang-bn">${item.labelBn || item.label}</span>
+          html += `<div class="mobile-accordion-item">
+            <button class="mobile-accordion-toggle" aria-expanded="false" data-mobile-accordion>
+              <span>
+                <span class="lang-en">${item.label}</span>
+                <span class="lang-bn">${item.labelBn || item.label}</span>
+              </span>
+              <span class="material-symbols-outlined accordion-icon">expand_more</span>
+            </button>
+            <div class="mobile-accordion-content">
+              ${renderItems(item.children, level + 1)}
+            </div>
           </div>`;
-          html += renderItems(item.children, level + 1);
         } else {
           const active = isActive(item, currentPage);
-          html += `<a href="${item.href}" class="mobile-nav-link${active ? ' active' : ''}" style="padding-left:${16 + level * 12}px">
+          html += `<a href="${item.href}" class="mobile-nav-link${active ? ' active' : ''}">
             <span class="lang-en">${item.label}</span>
             <span class="lang-bn">${item.labelBn || item.label}</span>
           </a>`;
@@ -351,9 +365,21 @@
   }
 
   
-  /* ── Mobile hamburger ── */
+  /* ── Mobile hamburger & Accordion ── */
   function initHamburger() {
     document.addEventListener('click', function (e) {
+      // Mobile accordion toggle click
+      const accordionBtn = e.target.closest('[data-mobile-accordion]');
+      if (accordionBtn) {
+        const content = accordionBtn.nextElementSibling;
+        const isOpen = accordionBtn.classList.contains('open');
+        accordionBtn.classList.toggle('open');
+        accordionBtn.setAttribute('aria-expanded', !isOpen);
+        if (content) content.classList.toggle('open');
+        return;
+      }
+
+      // Mobile hamburger panel click
       const btn = e.target.closest('#hamburger-btn');
       const panel = document.getElementById('mobile-panel');
       if (btn && panel) {
